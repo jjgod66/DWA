@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>flex test7</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+        }
+        ul {
+            display: flex;
+            padding: 0;
+            list-style-type: none;
+            height: 300px;
+            border: 5px solid red;
+        }
+        li {
+            background-color: beige;
+        }
+        li:nth-child(2n) {
+            background-color: coral;
+        }
+        li:nth-child(1){order: 5;}
+        li:nth-child(2){order: 4;}
+        li:nth-child(3){order: 3;}
+        li:nth-child(4){order: 2;}
+        li:nth-child(5){order: 1;}
+        /* order에는 음수도 올 수 있다 (낮을수록 빠르다) , 같은 값이면 코드 상의 순서대로 */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>거북이</li>
+        <li>호랑이</li>
+        <li>다람쥐</li>
+        <li>청설모</li>
+        <li>고라니</li>
+    </ul>
+</body>
+</html>

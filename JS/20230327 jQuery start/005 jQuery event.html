@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery event</title>
+        <style>
+            div {
+                width: 300px;
+                border: 2px solid blue;
+            }
+            p {
+                background-color: yellow;
+            }
+            input {
+                border: 2px solid red;
+            }
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function() {
+                // $("#div1").on({
+                //     "click" : function () {
+                //         alert("div1 event!")
+                //     }
+                //     ,"mouseover" : function () {
+                //         alert("div1Tag mouseover!")
+                //     }
+                // })
+                $("#div2").click( function (e) {
+                    alert("div2 event!");
+                })
+                // $("p").on("mouseover", function () {
+                //     alert("pTag mouseover!");
+                // })
+                $("input").on("change", function () {
+                    alert($("input").val());
+                })
+                $(".test").on("click", function () {
+                    alert($(this).text());
+                })
+            })
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            클릭 이벤트1
+        </div>
+        <div id="div2">
+            클릭 이벤트2
+        </div>
+        <p>
+            p태그 입니다!
+        </p>
+        <input type="text"/>
+        <p class="test">p태그1</p>
+        <p class="test">p태그2</p>
+        <p class="test">p태그3</p>
+        <p class="test">p태그4</p>
+        <p class="test">p태그5</p>
+        <p class="test">p태그6</p>
+        <p class="test">p태그7</p>
+    </body>
+</html>

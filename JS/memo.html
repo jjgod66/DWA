@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>memo</title>
+        <style>
+            
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("button").on("click", function(){
+                    console.log(event.pageX);
+                })
+                $(window).on("resize", function(){
+                    console.log("bbb");        
+                })
+            })
+            
+        </script>
+    </head>
+    <body>
+        <button>demo</button>
+        <input type="text">
+
+
+
+
+    </body>
+</html>

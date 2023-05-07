@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>find-test2</title>
+        <style>
+            .wrapper * {
+                display: block;
+                border: 2px solid lightgray;
+                color: lightgray;
+                padding: 5px;
+                margin: 15px;
+            }
+            .wrapper div {
+                width: 300px;
+            }
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function(){
+                // $("span").parent().css({"color":"red", "border":"2px solid red"});
+                // $("span").parents().css({"color":"red", "border":"2px solid red"});
+                // $("span").parentsUntil("div").css({"color":"red", "border":"2px solid red"});
+                // $("span").closest("div").css({"color":"red", "border":"2px solid red"});
+                $("#span2").closest(".wrapper").find("#span1").closest("ul").css("border","1px solid blue");
+            })
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">body
+            <div>div
+                <ul>ul
+                    <li>li
+                        <span id="span1">span</span>
+                    </li>
+                </ul>
+            </div>
+            <div>div
+                <ul>ul
+                    <li>li
+                        <span id="span2">span</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

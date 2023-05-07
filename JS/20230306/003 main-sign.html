@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title> 
+    <style>
+        html, body, #wrapper {
+            width: 100%; height: 100%;
+        }
+        body {
+            margin: 0;
+        }
+
+        .header {
+            position: relative;
+            align-items: center; justify-content: center;
+            width: 100%; height: 30%;
+        }
+        #hd1 {
+            position: absolute;
+            top: 14%; left: 50%;
+            transform: translateX(-50%);
+            width: 80%; height: 50%;
+            background-color: bisque;
+            border-radius: 40px;
+        }
+        #hd2 {
+            position: absolute;
+            display: flex;
+            align-items: center; justify-content: center;
+            top: 67%; left: 50%;
+            transform: translateX(-50%);
+            width: 80%; height: 30%;
+            background-color: darkcyan;
+            border-radius: 30px;
+        }
+        #hd1txt {
+            margin: 0;
+            display: flex;
+            align-items: center; justify-content: center;
+            transform: translateY(40%); 
+        }
+        #hd1 a {
+            text-decoration: none;
+        }
+        #hd2menu {
+            margin: 0; padding: 0;
+        }
+        #hd2menu li {
+            display: inline;
+            text-transform: uppercase;
+            padding: 0 40px;
+            color: white;
+            font-weight: normal; letter-spacing: 2px;
+        }
+        #hd2menu li a {
+            text-decoration: none;
+            color: white;
+        }
+        #hd2menu li a:hover {
+            color: yellow;
+        }
+        .middle {
+            position: relative;
+            display: flex;
+            width: 100%; height: 60%;
+        }
+        #nav {
+            width: 18%; height: 100%;
+            margin: 0% 1%;
+            background-color: antiquewhite;
+            border-radius: 40px;
+        }
+        #navtable {
+            margin-left: 5%;
+            background-color: #D1B3E0;
+        }
+        #navtable td{
+            padding: 10px 100px 10px 10px;
+        }
+        #navtable, #navtable td {
+            border-collapse: collapse;
+            border : 1px solid #82708b;
+        }
+        #navtable a {
+            text-decoration: none;
+            color: white;
+        }
+        #navtable a:hover {
+            text-decoration: none;
+            color: yellow;
+        }
+        #content {
+            margin: 0 1%;
+            width: 58%; height: 100%;
+            position: relative;
+            align-items: center; justify-content: center;
+        }
+        .content {
+            position: relative;
+            display: flex;
+            align-items: center; justify-content: center;
+            width: 100%; height: 100%;
+        }
+        .contentbox {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 33%; height: 97%;
+            margin: 1%;
+            border: 1px dotted #82708b;
+            background-color: azure;
+        }
+        .contentbox img {
+            width: 80%; height: 40%; 
+            margin: 5% 0;
+        }
+        .contentbox .content-text {
+            height: 30%;
+            margin: 5% 0;
+            padding: 0 5%;
+        }
+        .contentbox .content-button {
+            height: 5%;
+            /* margin: 1% 0; */
+        }
+        #rightbox {
+            position: relative;
+            width: 18%; height: 100%;
+            margin: 0% 1%;
+            background-color: antiquewhite;
+            border-radius: 40px;
+        }
+        #cart {
+            position: absolute;
+            top: 2%; left: 5%;
+            width: 90%; height: 28%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        #login {
+            position: absolute;
+            top: 30%; left: 5%;
+            width: 90%; height: 68%;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .footer {
+            position: relative;
+            display: flex;
+            align-items: center; justify-content: center;
+            width: 100%; height: 10%;
+        }
+        #info {
+            display: flex;
+            align-items: center; justify-content: center;
+            width: 80%; height: 50%;
+            color: white;
+            background-color: darkcyan;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="header">
+            <div id="hd1">
+                <h2 id="hd1txt"><img src="../img/shop.jpg" width="100px" height="80px">&nbsp;<a href="#">Web Shopping</a></h2>
+            </div>
+            <div id="hd2">
+                <ul id="hd2menu">
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">shopping about</a></li>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">my account</a></li>
+                    <li><a href="#">contacts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="middle">
+            <div id="nav">
+                <h3 style="padding-left: 20px;">카테고리</h3>
+                <table id="navtable">
+                    <tr><td><a href="001 main.html">컴퓨터</a></td></tr>
+                    <tr><td><a href="002 main-cloth.html">의류</a></td></tr>
+                    <tr><td><a href="#">음악</a></td></tr>
+                    <tr><td><a href="#">영화</a></td></tr>
+                    <tr><td><a href="#">스포츠/레저</a></td></tr>
+                    <tr><td><a href="#">가구/인테리어</a></td></tr>
+                    <tr><td><a href="#">식품</a></td></tr>
+                </table>
+            </div>
+            <div id="content">
+                <div class="content">
+                    <form style="width: 60%; height: 80%;" name="sign">
+                        <fieldset style="padding: 5% 10% 15% 10%;">
+                            <legend>회원정보입력</legend>
+                                <table>
+                                    <tr><td>아이디</td><td><input type="text" name="id"></td><td><button>중복검사</button></td></tr>
+                                    <tr><td>패스워드</td><td><input type="password" name="pwd"></td></tr>
+                                    <tr><td>패스워드 확인</td><td><input type="password" name="pwd"></td></tr>
+                                    <tr><td>이름</td><td><input type="text" name="name"></td></tr>
+                                    <tr><td>휴대폰 번호</td><td><input type="text" name="phone"></td></tr>
+                                    <tr><td>이메일</td><td><input type="text" name="email"></td></tr>
+                                    <tr><td>생일</td><td><input type="date" name="birth"></td></tr>
+                                    <tr><td>홈페이지</td><td><input type="text" name="homepage"></td></tr>
+                                    <tr><td>성별</td><td><input type="radio" id="M" name="gender"><label for="M">남성</label></td></tr>
+                                    <tr><td></td><td><input type="radio" id="F" name="gender"><label for="F">여성</label></td></tr>
+                                </table>`
+                        </fieldset>
+                        <p><input type="submit" value="제출"> <input type="reset" value="초기화"></p>
+                    </form>
+                </div>
+            </div>
+            <div id="rightbox">
+                <div id="cart">
+                    <div style="padding-left: 5%;">
+                        <h3>Shopping Cart</h3>
+                        <p style="font-size: small;">현재 쇼핑카트에 물품이 없습니다.</p>
+                        <p style="font-size: small;"><a href="#">쇼핑카트 보기</a></p>
+                    </div>
+                </div>
+                <div id="login">
+                    <div style="padding-left: 5%;">
+                        <h3>Log in</h3>
+                        <form name="login">
+                            아이디<br>
+                            <input type="text"><br>
+                            비밀번호<br>
+                            <input type="password">
+                            <p><input type="submit" value="로그인"> <input type="reset" value="초기화"></p>
+                            <p style="font-size: small;"><a href="#">회원가입</a> <a href="#">비밀번호 분실</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div id="info">2019.08.23 DW아카데미 042-123-4567</div>
+        </div>
+    </div>  
+</body>
+</html>

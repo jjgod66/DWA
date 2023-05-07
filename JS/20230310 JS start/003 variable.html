@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<body>
+   <div id="div">하이1</div>
+   <div class="class">하이2</div>
+   <p>하이3</p>
+   <span>하이4</span>
+
+    <script>
+        // 변수 variable
+        // idDiv 같은 작명방법을 CamelCase 라고 함
+        const idDiv = document.querySelector("#div"); //Assignment 선언한다.
+
+
+        idDiv.innerHTML = "안녕하세요1";
+        idDiv.style.color = "red";
+        idDiv.style.backgroundColor = "yellow";
+        idDiv.style.fontSize = "40px";
+
+        document.querySelector(".class").innerHTML = "안녕하세요2";
+        document.querySelector("p").innerHTML = "안녕하세요3";
+        document.querySelector("span").innerHTML = "안녕하세요4";
+    </script>    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>filter test-1</title>
+        <style></style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("li:first").css("backgroundColor", "yellow");
+                $("li:last").css("backgroundColor", "yellow");
+                $("li:lt(4)").css("font-size", "30px"); // lt는 번째보다 같거나 작다
+                $("li:eq(5)").css("backgroundColor", "red"); // eq는 인덱스번호로
+            })
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+            <li>five</li>
+            <li>six</li>
+            <li>seven</li>
+            <li>eight</li>
+            <li>nine</li>
+        </ul>
+    </body>
+</html>

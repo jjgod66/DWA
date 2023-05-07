@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> 005 jQuery-example </title>
+        <style>
+            div {
+                border: 2px solid coral;
+            }
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(document).on("click, mouseover", "p, span", function(){    // div 안에있는 p태그를 클릭했을때(이렇게해야 동적으로 생긴요소도 적용)
+                    if ($(this).is("div p, span")) {              // bubbling으로 p태그 위에 있는 div에 도착해서 이벤트가 발동
+                        $(this).after($(this).clone().css("color", "coral"));
+                    } else {
+                        alert("x");
+                    }
+                });                
+            })
+        </script>
+    </head>
+    <body>
+        <div id="a">
+            <span>안녕하세요</span>
+            <p>
+                무궁화 꽃이 피었습니다
+            </p>
+        </div>
+        <p>
+            은주는 예쁘다
+        </p>
+        <div id="b">
+            <p>
+                사뿐히 즈려밟고 가시옵소서
+            </p>
+        </div>
+    </body>
+</html>

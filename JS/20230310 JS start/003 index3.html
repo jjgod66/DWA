@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<body>
+    <div id="div">id가 div인 div</div>
+    <div class="poet">class가 poet인 div</div>
+    <div class="poet">class가 poet인 div2</div>
+    <p>p태그</p>
+    <p>p태그2</p>
+    <span>span태그</span>
+    <span>span태그2</span>
+<script>
+
+    // display, margin, padding, fontFamily, fontStyle, fontWeight ....
+
+    const idDiv = document.querySelector("#div");
+    // const idDivStyle = document.querySelector("#div").style;
+    // console.log(idDivStyle);
+    idDiv.style.display = "inline-block";
+    idDiv.style.margin = "50px 30px";
+    idDiv.style.padding = "5px";
+    idDiv.style.fontFamily = "Franklin Gothic Medium, Arial Narrow, Arial, sans-serif";
+    idDiv.style.fontStyle = "italic";
+    // idDiv.style.fontWeight = "bold";
+    // idDivStyle.fontWeight = "bolder";
+
+    const classPoet = document.querySelector(".poet");
+    classPoet.style.display = "inline-block";
+    classPoet.style.color = "white";
+    classPoet.style.backgroundColor = "#2175f2";
+    console.log(classPoet.style.display);
+
+    const p = document.querySelector("p");
+    p.style.margin = "0";
+    p.style.backgroundColor = "rgb(152, 100, 72)";
+    p.style.color = "#ffff00";
+    
+    const span = document.querySelector("span");
+    span.style.border = "3px dotted #0000ff";
+    span.style.display = "inline-block";
+    span.style.margin = "30px 0";
+    span.style.padding = "10px";
+    
+    console.log(typeof idDiv);
+    console.log(typeof idDivStyle);
+    console.dir(idDiv);
+    console.dir(idDivStyle);
+</script>    
+</body>
+</html>

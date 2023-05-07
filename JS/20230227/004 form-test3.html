@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>form test3</title>
+</head>
+<body>
+    <form>
+        <p>고객명 : <input type="text"></p>
+        <p>전화번호 : <input type="text"></p>
+        <p>E-mail : <input type="text"></p>
+        <fieldset style="width:300px;">
+            <legend>피자 사이즈</legend>
+            <p>
+                <input type="radio" value="" name="pizza-size" value="S" id="small">
+                <label for="small">Small</label>
+            </p>
+            <p>
+                <input type="radio" value="" name="pizza-size" value="M" id="medium">
+                <label for="medium">Medium</label>
+            </p>
+            <p>
+                <input type="radio" value="" name="pizza-size" value="L" id="large">
+                <label for="large">Large</label>
+            </p>
+        </fieldset>
+        <fieldset style="width:300px;">
+            <legend>토핑 선택</legend>
+            <p>
+                <input type="checkbox" value="" name="pizza-topping" value="B" id="bacon">
+                <label for="bacon">베이컨</label>
+            </p>
+            <p>
+                <input type="checkbox" value="" name="pizza-topping" value="C" id="cheese">
+                <label for="cheese">치즈</label>
+            </p>
+            <p>
+                <input type="checkbox" value="" name="pizza-topping" value="O" id="onion">
+                <label for="onion">양파</label>
+            </p>
+            <p>
+                <input type="checkbox" value="" name="pizza-topping" value="MR" id="mushroom">
+                <label for="mushroom">버섯</label>
+            </p>
+        </fieldset>
+        <p>희망배송시간 : <input type="time" name="time"></p>
+        <p>배송시 요청사항 : <textarea name="order" rows="2" cols="20"></textarea></p>
+        <p>
+            <input type="submit" value="주문하기" name="submitBtn">
+            <input type="reset" value="다시 선택하기" name="resetBtn">
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>changeCss with jQUERY</title>
+        <style>
+            table, td {
+                border-collapse: collapse;
+                border: 1px solid black;
+            }
+            #in {
+                display: none;
+            }
+            ul {
+                
+            }
+            li {
+                display: inline-block;
+                justify-self: start;
+            }
+        </style>
+        <script src="../20230327/js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#first").on({
+                    "mouseover": function() {
+                        $("#first #in").css("display", "absolute")
+                    }
+                    , "mouseleave" : function() {
+                        $("#first #in").css("display", "none")    
+                    }
+                })
+            })
+        </script>
+        
+    </head>
+    <body>
+        <ul>
+            <li>
+                <table id="first">
+                    <tr>
+                        <td id="out">
+                            외부
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="in">
+                            내부
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table id="second">
+                    <tr>
+                        <td id="out">
+                            외부
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="in">
+                            내부
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        
+    </body>
+</html>

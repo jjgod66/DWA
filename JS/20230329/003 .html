@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>dfdfdfsdfsf</title>
+        <style>
+            .backRed {
+                background-color: red;
+            }
+            .backBlue {
+                background-color: blue;
+            }
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function(){
+               $("p").addClass("backRed");
+               $("#changeColor").on("click", function() {
+                $("p").toggleClass("backRed")
+                $("p").toggleClass("backBlue")
+               })
+            })
+        </script>
+    </head>
+    <body>
+        <p>sdfsdfsd</p>
+        <button id="changeColor">누르세요</button>
+    </body>
+</html>

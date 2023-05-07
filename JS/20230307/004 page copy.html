@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>copy</title> 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body, #wrapper {
+            width: 100%; height: 100%;
+        }
+        body {
+            margin: 0;
+        }
+        #header {
+            width: 100%; height: 25%;
+            display: grid;
+            grid-template-columns: 80%;
+            grid-template-rows: 60% 25%;
+            justify-content: center; align-items: center;
+            align-content: space-evenly;
+            
+        }
+        #hd1 {
+        }
+        #hd2 {
+        }
+        #body {
+            width: 80%; height: 70%;
+            margin: 0 10%;
+            display: grid;
+            grid-template-columns: 23.5% 50% 23.5%;
+            grid-template-rows: 95%;
+            justify-content: space-between; align-content: center;
+        }
+        #footer {
+            width: 100%; height: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="hd1"></div>
+            <div id="hd2"></div>
+        </div>
+        <div id="body">
+            <div id="bd1"></div>
+            <div id="bd2"></div>
+            <div id="bd3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

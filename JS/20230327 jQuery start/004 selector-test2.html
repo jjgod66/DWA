@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>selector-test2</title>
+        <!-- cdn 방식 -->
+        <!-- <script src="https://code.jquery.com/jquery-3.6.4.js"></script>-->
+        <!-- 내부 스크립트 방식 -->
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("p[title]").css("backgroundColor", "yellow");
+                $("input[type='text']").css("border", "5px solid blue").css("backgroundColor", "red");
+                $("input[type='password']").css("border", "2px dashed red").css("backgroundColor", "blue");
+            })
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <p> 일반 문단입니다</p>
+        <p title="툴팁으로 보입니다"> 타이틀을 가지고 있는 문단입니다 </p>
+        <input type="text"> 회원번호 </input>
+        <input type="password"> 비밀번호 </input>
+    </body>
+</html>

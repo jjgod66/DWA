@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>layout 연습3</title> 
+    <style>
+        html, body, #wrapper {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            margin: 0;
+        }
+        #header {
+            width: 100%;
+            height: 30%;
+            background-color: lightblue;
+        }
+        #subject {
+            height: 50%;
+        }
+        ul {
+            text-align: center;
+            border-top: 1px solid red;
+            border-bottom: 1px solid red;
+            padding: 30px 120px; 
+        }
+        ul li {
+            display: inline; 
+            text-transform: uppercase;
+            padding: 0 40px;
+            letter-spacing: 10px;
+        }
+        #nav {
+            width: 20%;
+            height: 60%;
+            float: left;
+            background-color: lightcoral;
+        }
+        #content {
+            width: 30%;
+            height: 30%;
+            padding: 10%;
+            background-color: lightcyan;
+            display: inline-block;
+        }
+        #login {
+            width: 30%;
+            height: 60%;
+            float: right;
+            background-color: lightgoldenrodyellow;
+        }
+        #footer {
+            width: 100%;
+            height:10%;
+            clear: both;
+            background-color: lightgray;
+        }
+        #navtable {
+            width: 100%;
+            background-color: black;
+            color: white;
+        }
+        #navtable td {
+            padding-left: 5%;
+        }
+        #contenttable {
+            position: relative;
+            /* margin: 20% 10%; */
+            width: 80%;
+            height: 50%;
+            border-collapse: collapse;
+        }
+        table, tr, td {
+            border: 1px solid black;
+        }
+        #contenttable td {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="subject">
+                <span>
+                <a href="#"><img src="img/coffee.jpg" width="10%">Web Shop</a>
+                </span>
+            </div>
+            <div id="list">
+                <ul>
+                    <li>home</li>
+                    <li>about us</li>
+                    <li>new</li>
+                    <li>my account</li>
+                    <li>contacts</li>
+                </ul>
+            </div>
+        </div>
+        <div id="nav">
+            <h3>카테고리</h3>
+            <table id="navtable">
+                <tr><td>컴퓨터</td></tr>
+                <tr><td>의류</td></tr>
+                <tr><td>음악</td></tr>
+                <tr><td>영화</td></tr>
+                <tr><td>스포츠/레저</td></tr>
+                <tr><td>가구/인테리어</td></tr>
+                <tr><td>식품</td></tr>
+            </table>
+        </div>
+        <div id="content">
+            <table id="contenttable">
+                <tr>
+                    <td>
+                        <img src="img/coffee.jpg" style="width: 100px; height: 100px;">
+                        <div>
+                            심플하고 슬림한 본체에 코어i5 3470과 지포스 GT630을 장착 CPU:인텔 코어I5 3470 (아이비브릿지 3세대) 사용<br>
+                            가격:1,200,000원
+                        </div>
+                    </td>
+                    <td>
+                        <img src="img/coffee.jpg" style="width: 100px; height: 100px;">
+                        <div>
+                            Full-HD로 선명한 화면, ISP패널로 시야각도 좋다!<br>
+                            CPU:인텔 코어i7 3630 QM<br>
+                            가격:1,200,000원
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="login"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> 002 jQuery-fade </title>
+        <style>
+           .wrapper * {
+                display: block;
+                border: 2px solid lightgray;
+                color: lightgray;
+                padding: 5px;
+                margin: 15px;
+            }
+            .wrapper {
+                width: 500px;
+            }
+            .big {
+                font-size: 200%;
+                color: black;
+                font-weight: bold;
+            }
+            .back {
+                background-color: yellow;
+            }
+            .reddish {
+              color: red;  
+            }
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function(){
+                function c(target){
+                    console.log(target);
+                }
+                $(".start").addClass("reddish");
+                $("li:last").css("border", "3px solid red");
+                $("#fadeOutBtn").on("click", function(){
+                    // $("li:last").fadeOut();      //fadeIn 기본형
+                    // $("li:last").fadeOut(3000);      //fadeIn 파라미터 숫자
+                    $("li:last").fadeOut("slow");      //fadeIn 파라미터 문자열
+                });
+                $("#fadeInBtn").on("click", function(){
+                    // $("li:last").fadeIn();      //fadeIn 기본형
+                    // $("li:last").fadeIn(3000);      //fadeIn 파라미터 숫자
+                    $("li:last").fadeIn("fast");      //fadeIn 파라미터 문자열
+                });
+                $("#fadeToggleBtn").on("click", function(){
+                    $("li:last").fadeToggle("slow");      
+                });
+                $("#fadeToBtn").on("click", function(){
+                    $("li:last").fadeTo("slow", 1);   //opacity      
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <ul>
+                <li class="start">li class="start"</li>
+                <li class="my">li class="my"</li>
+                <li>li</li>
+                <li class="my">li class="my"</li>
+                <li class="stop">li class="stop"</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li last</li>
+            </ul>
+        </div>
+        <button id="fadeOutBtn">요소 Fade Out</button>
+        <button id="fadeInBtn">요소 Fade In</button>
+        <button id="fadeToggleBtn">요소 Fade Toggle</button>
+        <button id="fadeToBtn">요소 Fade To</button>
+    </body>
+</html>

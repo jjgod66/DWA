@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>사이트</title> 
+    <style>
+        html,body,#wrapper {
+            width: 100%; height: 100%;
+        }
+        #wrapper {
+            background-color: whitesmoke;
+        }
+        body {
+            margin: 0;
+        }
+        .header {
+            width: 100%; height: 20%;
+        }
+        .hd1 {
+            position: relative;
+            height: 68%;
+        }
+        .hd2 {
+            background-color: darkcyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+        }
+        .hd-ul {
+            width: 100%;
+            margin: 0;
+            padding: 1%;
+            text-align: center;
+            border-top: 1px solid red;
+            border-bottom: 1px solid red;
+        }
+        .hd-ul li {
+            display: inline;
+            letter-spacing: 10px;
+            padding: 0 5%;
+            font-weight: bold;
+        }
+        .hd-ul li a {
+            text-decoration: none;
+        }
+        .hd-ul li a:link {
+            color: white;
+        }
+        .hd-ul li a:visited {
+            color: white;
+        }
+
+        .nav {
+            width: 20%; height: 70%;
+            float: left;
+        }
+        .content {
+            width: 50%; height: 70%;
+            float: left;
+            position: relative;
+
+        }
+        .right {
+            width: 30%; height: 70%;
+            float: left;
+        }
+        .navsubject {
+            width: 50%; height: 5%;
+            position: relative;
+            /* top: %; */
+            left: 3%;
+        }
+        .navtable {
+            width: 100%; height: 80%;
+        }
+        #navtable {
+            width: 80%; height: 70%;
+            border-collapse: collapse;
+            border: 1px solid grey;
+            background-color: black;
+            color: white;
+        }
+        #navtable td {
+            border: 1px solid grey;
+            padding-left: 5%;
+        }
+        #navtable a:link {
+            text-decoration: none;
+        }
+        #navtable a:visited {
+            color: white;
+        }
+        #navtable a:hover {
+            color: yellow;
+        }
+        #contenttable {
+            position: absolute;
+            top: 10%; left: 10%;
+            width: 80%; height: 50%;
+            border-collapse: collapse;
+            border: 1px dotted grey;
+        }
+        #contenttable td {
+            position: relative;
+            border: 1px dotted grey;
+            width: 50%;
+        }
+        .computer {
+            position: absolute; bottom: 50%;
+            width: 50%;
+        }
+        #contenttable td div {
+            position: absolute; top: 50%;
+        }
+        #contenttable td button {
+            position: absolute; bottom: 5%;
+        }
+        .footer {
+            clear: both;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 10%;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="header">
+            <div class="hd1">
+                <span style="position: absolute; top: 30%; left: 1%">
+                    <img src="img/coffee.jpg"width="10%">
+                    <a href="#">
+                        <h2 style="display: inline; margin: 0;"><a href="#">Web Shop</a></h2>
+                    </a>
+                </span>
+            </div>
+            <div class="hd2">
+                <ul class="hd-ul">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">MY ACCOUNT</a></li>
+                    <li><a href="#">CONTACTS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="navsubject">
+                <h3 style="display: inline;">카테고리</h3>
+            </div>
+            <div class="navtable">
+                <table id="navtable">
+                    <tr><td><a href="#">컴퓨터</a></td></tr>
+                    <tr><td><a href="#">의류</a></td></tr>
+                    <tr><td><a href="#">음악</a></td></tr>
+                    <tr><td><a href="#">영화</a></td></tr>
+                    <tr><td><a href="#">스포츠/레저</a></td></tr>
+                    <tr><td><a href="#">가구/인테리어</a></td></tr>
+                    <tr><td><a href="#">식품</a></td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="content">
+            <table id="contenttable">
+                <tr>
+                    <td>
+                        <img class="computer" src="img/coffee.jpg">
+                        <div>
+                            심플하고 슬림한 본체에 코어i5 3470과 지포스 GT630을 장착<br>
+                            CPU:인텔 코어I5 3470 (아이비브릿지 3세대) 사용<br>
+                            가격:1,200,000원
+                        </div>
+                        <button>쇼핑카드에 추가하기</button>
+                    </td>
+                    <td>
+                        <img class="computer" src="img/coffee.jpg">
+                        <div>
+                            Full-HD로 선명한 화면, ISP패널로 시야각도 좋다!<br>
+                            CPU:인텔 코어i7 3630 QM<br>
+                            가격:1,200,000원
+                        </div>
+                        <button>쇼핑카드에 추가하기</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <div id="cart">
+                <h3>Shopping Cart</h3>
+                <div>현재 쇼핑카트에 물품이 없습니다.</div>
+                <div><a href="">쇼핑카트 보기</a></div>
+            </div>
+            <div id="log">
+                <h3>Log in</h3>
+                <div>
+                    아이디<br>
+                    <input type="text"><br>
+                    패스워드<br>
+                    <input type="password">
+                    <p><button>로그인</button> <button>초기화</button></p>
+                    <p><a href="#">회원가입</a> <a href="#">비밀번호 분실</a></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div style="color: white">Copyright (c) 2013 Hong</div>
+        </div>
+    </div>
+</body>
+</html>

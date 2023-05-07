@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>input 테스트</title>
+</head>
+<body>
+    <form>
+        <p><input type="button" value="회원가입" name="joinBtn"></p>
+        <p><input type="text" value="" placeholder="오늘은 금요일입니다." name="text_test"></p>
+        <p><input type="password" name="password_test"></p>
+        <p> 
+            <!--radio는 name이 같으면 여럿 중 하나만 선택가능-->
+            <!--label은 id로 묶는다-->
+            <input type="radio" name="radio_test" id="radiotest1">
+            <label for="radiotest1">test1</label>
+
+            <input type="radio" name="radio_test" id="radiotest2">
+            <label for="radiotest2">test2</label>
+
+            <input type="radio" name="radio_test" id="radiotest3">
+            <label for="radiotest3">test3</label>
+        </p>
+        <p>
+            <input type="checkbox" name="checkbox_test" id="checkboxtest1" checked>
+            <label for="checkboxtest1">test1</label>
+
+            <input type="checkbox" name="checkbox_test" id="checkboxtest2">
+            <label for="checkboxtest2">test2</label>
+
+            <input type="checkbox" name="checkbox_test" id="checkboxtest3">
+            <label for="checkboxtest3">test3</label>
+        </p>
+        <p><input type="hidden" name="hidden_test" value="보이지않는 값"></p>
+        <p><input type="submit" value="제출" name="submitBtn"></p>
+        <p><input type="text" placeholder="10자리만 입력하세요." maxlength="10" name="size_test"></p>
+        <p><input type="button" value="계산" onclick="alert('10000원입니다.')"></p>
+        <p><button onclick="alert('안녕하세요?')">눌러보세요!</button></p>
+        <p><input type="file" accept="image/jpeg, image/gif"></p>
+
+        <p>
+            <textarea name="feedback" rows="2" cols="25" readonly>테스트입니다.</textarea>
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> 001 jQuery-hide,show </title>
+        <style>
+           .wrapper * {
+                display: block;
+                border: 2px solid lightgray;
+                color: lightgray;
+                padding: 5px;
+                margin: 15px;
+            }
+            .wrapper {
+                width: 500px;
+            }
+            .big {
+                font-size: 200%;
+                color: black;
+                font-weight: bold;
+            }
+            .back {
+                background-color: yellow;
+            }
+            .reddish {
+              color: red;  
+            }
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function(){
+                function c(target){
+                    console.log(target);
+                }
+                $(".start").addClass("reddish");
+                $("li:last").css("border", "3px solid red");
+                c($(".start").prop("tagName"));
+                // c($(".start").prop("tagName").toLowerCase());
+                // c($(".start").prop("tagName").toUpperCase());
+                $("#hideBtn").on("click", function(){
+                    // $("li:last").hide();         //dispaly:none과 같음. hide 기본형
+                    // $("li:last").hide(2000);     //hide 파라미터 숫자    
+                    $("li:last").hide(function(){   //hide 파라미터 함수
+                        alert("없어졌다!");
+                    });    
+                })
+                $("#showBtn").on("click", function(){
+                    // $("li:last").show();         //show 기본형
+                    // $("li:last").show(2000);     //show 파라미터 숫자
+                    $("li:last").show(10000, function(){   //show 파라미터 함수
+                        alert("다시보인다!");
+                    });    
+                })
+                $("#toggleBtn").on("click", function(){
+                    $("li:last").toggle();
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <ul>
+                <li class="start">li class="start"</li>
+                <li class="my">li class="my"</li>
+                <li>li</li>
+                <li class="my">li class="my"</li>
+                <li class="stop">li class="stop"</li>
+                <li>li</li>
+                <li>li</li>
+                <li>li last</li>
+            </ul>
+        </div>
+        <button id="hideBtn">요소숨기기</button>
+        <button id="showBtn">요소보이기</button>
+        <button id="toggleBtn">요소토글버튼</button>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery event</title>
+        <style>
+            img {
+                width: 300px; height: 300px;
+                border: 1px solid transparent;
+                /* box-sizing: border-box; */
+            }
+            body {
+                background-color: rgb(241, 247, 255);
+            }
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            // $(function(){})
+            $(document).ready(function() {
+                $("input[type='button']").on("click", function(){
+                    $("input[type='button']").css("backgroundColor", "yellow");
+                    $("a[href^='mailto']").css({
+                                                "backgroundColor": "yellow"
+                                                ,"text-decoration": "none"
+                                            });
+                    $("img[id!='cat01']").css("border", "1px solid blue");
+                    $("img[title]").css("border", "1px solid red");
+                    $("#cat05").css("border", "1px solid yellow");
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <a href="http://tjdaewoo.co.kr/">DW아카데미</a><br><br>
+        <a href="mailto:kjy.devops@gmail.com">kjy에게 메일보내기</a><br><br>
+        <div><label>Some images</label></div>
+        <div id="a">
+            <img src="img/cat01.jpg" id="cat01" alt="sunglass"/>
+            <img src="img/cat02.jpg" id="cat02" title="surprised"/>
+            <img src="img/cat03.jpg" id="cat03" alt="scream"/>
+            <img src="img/cat04.jpg" id="cat04" title="cheese"/>
+            <img src="img/cat05.jpg" id="cat05" alt="twoColor"/>
+        </div>
+        <div id="someDiv">이곳은 ID속성이 <tt>someDiv</tt>인 &lt;div&gt;태그 입니다.</div>
+        <form>
+            <div>
+                <label>Text:</label> <input type="text" id="aTextField" name="someTextField"/>
+            </div>
+            <button type="submit" id="submitButton">Submit</button><input type="button" value="클릭~~">
+        </form>
+    </body>
+</html>

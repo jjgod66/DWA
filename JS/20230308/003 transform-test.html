@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>transform test</title> 
+    <style>
+        h1 {
+            background-color: deepskyblue;
+            color: white;
+            display: inline-block;
+            padding: 5px;
+            font-size: 3rem;
+            margin: 100px;
+            transform: scaleX(1); /* scale(0.5, 0.5) */
+        }
+        /* transform은 inline이나 inline-block이여야 작동 */
+        /* scale : 요소의 크기배율 설정 */
+        
+        h1:hover {
+            transform: scale(2);
+            transform-origin: left top;
+            /* origin : 기준점설정 */
+            transition: all 2s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transform Test</h1>
+    <h1>Transform Test</h1>
+</body>
+</html>

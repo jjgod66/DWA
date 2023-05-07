@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>layout 연습2</title> 
+    <style>
+       html, body {
+            width: 1900px; height: 923px;
+            margin: 0;
+        }
+        #header {
+            border: 1px solid salmon;
+            border-radius: 50px;
+            background-color: lightyellow;
+            width: 1888px; height: 150px;
+            margin: 5px;
+        }
+        #nav {
+            border: 1px solid salmon;
+            border-radius: 50px;
+            background-color: lightpink;
+            width: 485px; height: 727px;
+            float: left;
+            margin: 5px;
+            
+        }
+        #content {
+            border: 1px solid salmon;
+            border-radius: 50px;
+            background-color: lightgrey;
+            width: 1396px; height: 727px;
+            float: right;
+            margin: 5px 5px 5px 0;
+        }
+        #footer {
+            border: 1px solid salmon;
+            border-radius: 50px;
+            background-color: lightsteelblue;
+            width: 1888px; height: 25px;
+            clear: both;
+            margin: 0 5px 5px 5px;
+        }
+        #header-text {
+            margin: 0;
+            width: 100%; height: 150px;
+            line-height: 150px;
+            text-align: center;
+        }
+        #footer-text {
+            margin: 0;
+            color: white;
+            width: 100%; height: 25px;
+            line-height: 25px;
+            text-align: center;
+        }
+        .content-text {
+            margin: 30px;
+            border: 1px dotted darkcyan;
+            border-radius: 15px;
+            padding: 5px;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1 id="header-text">My Blog Page</h1>
+        </div>
+        <div id="nav">
+            <div style="margin-left: 20px;">
+                <h2>Links</h2>
+            </div>
+            <div style="margin-left: 40px;">
+                <ul>
+                    <li><a href="#">W3C</a></li>
+                    <li><a href="#">MOZILLA</a></li>
+                    <li><a href="#">HTML Dogs</a></li>
+                </ul>
+                <img src="img/coffee.jpg" width="200px" height="100px"><br>
+                홍길동
+            </div>
+        </div>
+        <div id="content">
+            <div>
+                <div class="content-text">
+                    <h2>Semantic Tags</h2>
+                    <p>시멘틱 요소(Semantic elements)들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소이다.레이아웃을 만들때 쓰는 것. 의미가 있는 요소라면 div보다는 시멘틱 태그를 사용해준다.</p>
+                </div>
+                <div class="content-text">
+                    <h2>div와 span</h2>
+                    <p>div은 "divide"의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다. span요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.</p>
+            </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footer-text">Copyright (c) 2013 Hong</div>
+        </div>
+    </div>
+</body>
+</html>

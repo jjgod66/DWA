@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CLASS 선택자 테스트</title>
+    <style>
+        /* class 선택 할때에는 .을 붙인다 */
+
+        .type1 {
+            text-align: center;
+            border: 1px solid blue;
+        }
+        p.type1 {
+            border: 1px solid red;
+        }
+        em {
+            color:purple;
+        }
+        b {
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="type1">class가 type1인 헤딩입니다.</h1>
+    <p class="type1">class가 type1인 단락입니다.</p>
+    <p class="type1">
+        안<b>녕<em>하</em>세</b>요 <br>
+        안<em>녕<b>하</b>세</em>요
+    </p>
+</body>
+</html>

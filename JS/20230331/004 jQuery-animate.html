@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title> 004 jQuery-animate </title>
+        <style>
+            #aniBtn {
+                width: 200px; height: 50px;
+                background-color: #2196f3;
+                border: none;
+                font-size: 20px;
+                color: white;
+            }
+            .aniDiv {
+                position: absolute;
+                width: 300px; height: 150px;
+                background-color: skyblue;
+            }
+        </style>
+        <script src="js/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function(){
+                function c(target){
+                    console.log(target);
+                }
+                // $(".navBar").on("click", function(){
+                //     $(".dtlNavBar").slideDown("slow");
+                // });
+                // $(".dtlNavBar").on("click", function(){
+                //     $(this).slideUp("slow");
+                // });
+                $("#aniBtn").on("click", function(){
+                    $("div.aniDiv").animate({
+                        left: "250px"
+                       ,height:"300px"
+                       ,width: "500px"
+                       ,opacity: 0.5 
+                    });
+                    $("div.aniDiv").animate({
+                        fontSize: "3em"
+                    });
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="aniBtn">애니메이션</button><br><br>
+        <div class="aniDiv">Animation DIV</div>
+    </body>
+</html>

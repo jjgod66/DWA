@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* h2 {
+            margin: 0;
+        } */
+    </style>
+    <script src="js/jquery-3.6.4.js"></script>
+    <script>
+        const url = "https://jsonplaceholder.typicode.com/usersss";
+        function doAction(){
+            alert("시작");
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.send();
+            xhr.onreadystatechange = function (){
+                if (this.readyState == 4 && this.status == 200) {
+                    let res = this.responseText;
+                    res = JSON.parse(res);
+                    console.log(res);
+                    
+                    for (let i = 0; i<res.length; i++) {
+
+                        let nameLi = $("<h2>", {
+                            text : res[i].name,
+                            class : "name"
+                        });
+                        let emailLi = $("<span>", {
+                            text : res[i].email,
+                            class : "email"
+                        });
+                        let zipcodeLi = $("<span>", {
+                            text : res[i].address.zipcode,
+                            class : "zipcode"
+                        });
+
+                        $("li").append(nameLi);
+                        $("li").append(emailLi);
+                        $("li").append($("<br>"));
+                        $("li").append(zipcodeLi);
+                    }
+
+                    // for문 쓰는 또다른 방법들 
+                    // for(let resObj of res) {
+                    //     $("#authors").append(
+                    //         $("<li>").append(
+                    //             $("<h2>").text(resObj.name),
+                    //             $("<p>").text(resObj.email),
+                    //             $("<p>").text(resObj.address.zipcode)
+                    //         )
+                    //     )
+                    // }
+
+                    // for (let i in res) {
+                    //         $("#authors").append(
+                    //         $("<li>").append(
+                    //             $("<h2>").text(res[i].name),
+                    //             $("<p>").text(res[i].email),
+                    //             $("<p>").text(res[i].address.zipcode)
+                    //         )
+                    //     )
+                    // }
+
+                }
+            }
+        }
+
+        function doAjax(){
+            $.ajax({
+                type : "GET",
+                url : url,
+                success : function(data, status, xhr){
+                    console.log(data);
+                    console.log(status);
+                    console.log(xhr);
+                },
+                error : function(xhr, status, error){
+                    console.log(xhr);
+                    console.log(status);
+                    console.log(error);
+                }
+            })
+        }        
+    </script>
+</head>
+<body>
+    <h1>Authors</h1>
+    <ul id="authors">
+        <li style="list-style: none;">
+        </li>
+    </ul>
+    <button onclick="doAction()">Action</button>
+    <button onclick="doAjax()">Ajax</button>
+</body>
+</html>

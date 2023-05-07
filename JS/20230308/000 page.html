@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> </title> 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            width: 100%; height: 100%;
+        }
+        body {
+            width: 100%; height: 1860px;
+            margin: 0;
+        }
+        #wrapper {
+            width: 100%; height: 100%;
+            background-color: #5383E8;
+            color: white;
+        }
+        li {
+            display: inline-block;
+        }
+        .px40 {
+            display: flex;
+            height: 40px;
+        }
+        .px50 {
+            display: flex;
+            height: 50px;
+        }
+        .cc {
+            justify-content: center;
+            align-items: center;
+        }
+        #header {
+            color: #C3CBD1;
+            height: 130px;
+            display: grid;
+            grid-template-rows: repeat(3,1fr);
+        }
+        #hd1 {
+            background-color: #28344E;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #opgglogo {
+            padding: 10px 15px;
+            background-color: #5383E8;
+        }
+        #hd1 #gamenav ul {
+            margin: 0; padding: 0;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+        #hd1 #gamenav ul li {
+            font-size: 13px;
+            padding: 10px 20px;
+            height: 40px;
+        }
+        #hd1 #gamenav ul li:nth-child(1) {
+            background-color: #5383E8;
+        }
+        #hd2 {
+            height: 50px;
+        }
+        #hd2 ul {
+            margin: 0; margin-left: 226px;
+            padding: 0;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+        #hd2 ul li {
+            padding: 10px 15px;
+        }
+        #hd2 ul li:nth-child(1) {
+            color: white;
+        }
+        #hd3 {
+            align-items: center;
+            padding: 10px 0 15px 240px;
+            background-color: #FFB900;
+        }
+        #hd3 span {
+            color: black;
+            font-size: 14px;
+        }
+        #content {
+            height: 1230px;
+            display: grid;
+            grid-template-columns: 15% 35% 35% 15%;
+            grid-template-rows: 40% 20% 40%;
+            grid-template-areas:
+            ". a a ."
+            ". b b ."
+            ". c d .";
+        }
+        
+        #con1 { 
+            grid-area: a;
+            display: flex;
+            flex-direction: column;
+        }
+        #con1 #mainimg {
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+        #con1 #searchbox {
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+        #con1 #searchbox .textbox {
+            width: 800px; height: 60px;
+            background-color: white;
+            border-radius: 30px;
+            display: flex;
+        }
+        #con1 #searchbox .textbox #region {
+            width: 25%;
+            margin: 0 0 0 35px;
+            display: flex;
+            flex-direction: column;
+        }
+        #con1 #searchbox .textbox #region div {
+            color: black; 
+            height: 30px; 
+            font-size: 13px;
+            padding-top: 8px;
+            font-weight: bold;
+        }
+        #con1 #searchbox .textbox #region select {
+            border: none; 
+            height: 30px; width: 100%;
+            color: gray;
+        }
+        #con1 #searchbox .textbox #region select:active {
+            border: none;
+        }
+        #con1 #searchbox .textbox #region select:hover {
+            border: none;
+            cursor: pointer;
+        }
+        #con1 #searchbox .textbox #search {
+            width: 62%;
+            margin-left: 10px;
+        }
+        #con1 #searchbox .textbox #search div {
+            color: black; 
+            height: 30px; 
+            font-size: 13px;
+            padding-top: 8px;
+            font-weight: bold;
+        }
+        #con1 #searchbox .textbox #search input {
+            width: 95%;
+            height: 30px;
+            border: none;
+        }
+        #con1 #searchbox .textbox #ggBtn {
+            width: 100px;
+            color: #5383E8;
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #con1 #download {
+            height: 20%;
+            display: flex;
+            justify-content: center; align-items: center;
+        }
+        #con1 #download button {
+            padding: 10px;
+            background-color: #28344E;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        #con2 { grid-area: b;
+            background-color: white;
+            border-radius: 3px;
+            display: flex;
+            justify-content: center; align-items: center;
+        }
+        #con3 { 
+            grid-area: c;
+            background-color: white;
+            border-radius: 3px;
+            margin: 40px 5px 0 0;
+            padding: 15px;
+            display: grid;
+            grid-template-rows: 1fr repeat(5,2fr);
+        }
+        .con3list {
+            display: flex;
+            border-bottom: solid 1px lightgrey;
+        }
+        .con3list:nth-child(6) {
+            border-bottom: none;
+        }
+        #con3sub {
+            font-weight: bold;
+            color: black;
+            font-size: 14px;
+            padding-left: 15px;
+        }
+        .con3lisub {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-style: italic;
+            font-weight: bold;
+        }
+        .con3licon {
+            width: 90%;
+            display: flex;
+        }
+        .con3licon_img {
+            width: 20%; height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .con3licon_img img {
+            width: 50px; height: 50px;
+        }
+        .con3licon_sub {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%; height: 100%;
+            color: black;
+        }
+        #con4 { 
+            grid-area: d;
+            background-color: white;
+            border-radius: 3px;
+            margin: 40px 0 0 5px;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: 1.5fr repeat(7,1fr);
+            
+            
+        }
+        #footer {
+            height: 500px;
+            display: grid;
+            grid-template-rows: 2fr 4fr 1fr 3fr;
+            
+        }
+        #ft1 {
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        #ft1 table {
+            position: relative;
+            left: 230px;
+            width: 60%;
+        }
+        #ft1 th,td {
+            font-size: 14px;
+            justify-content: start;
+        }
+        #ft1 tr:nth-child(1) {
+            font-weight: bold;
+        }
+        #ft1 tr:nth-child(1) td {
+            padding: 20px 0 10px 0;
+        }
+        #ft2 {
+            display: flex;
+            justify-content: center;
+        }
+        #ft2 > div {
+            border-top: 1px solid white;
+        }
+        #fttext {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            font-size: 12px;
+        }
+        #fticon {
+            width: 10%;
+        }   
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="hd1" class="px40">
+                <div id="opgglogo" class="px40,cc"><img src="../img/opgg/opgglogo.svg" width="65px" height="16px"></div>
+                <div id="gamenav" class="px40">
+                    <ul>
+                        <li>리그오브레전드</li>
+                        <li>데스크톱</li>
+                        <li>발로란트</li>
+                        <li>배틀그라운드</li>
+                        <li>오버워치2</li>
+                        <li>이터널 리턴</li>
+                        <li>이스포츠</li>
+                        <li>톡피지지</li>
+                        <li>Duo</li>
+                    </ul>
+                </div>
+                <div></div> 
+                <div></div> 
+                <div></div> 
+            </div>
+            <div id="hd2" class="px50">
+                <ul>
+                    <li>홈</li>
+                    <li>챔피언 분석</li>
+                    <li>게임 모드</li>
+                    <li>통계</li>
+                    <li>랭킹</li>
+                    <li>프로관전</li>
+                    <li>멀티서치</li>
+                    <li>커뮤니티</li>
+                </ul>
+            </div>
+            <div id="hd3" class="px40">
+                <span>라이엇 게임즈 x OP.GG | 공식 채널에서 격전 팀을 찾아보세요!</span>
+            </div>
+        </div>
+        <div id="content">
+            <div id="con1">
+                <div id="mainimg">
+                    <img src="../img/opgg/jaya.webp">
+                </div>
+                <div id="searchbox">
+                    <div class="textbox">
+                        <div id="region">
+                            <div>Region</div>
+                            <select name="region">
+                                <option value="kr" selected>Korea</option>
+                                <option value="en">Europe West</option>
+                                <option value="us">Europe Nordic & East</option>
+                                <option value="jp">North America</option>
+                            </select>
+                        </div>
+                        <div id="search">
+                            <div>Search</div>
+                            <input type="text" placeholder="소환사명, 소환사명, ...">
+                        </div>
+                        <div id="ggBtn">
+                            .GG
+                        </div>
+                    </div>
+                </div>
+                <div id="download">
+                    <button><img src="../img/opgg/icon-window-white.svg"><span>데스크탑 무료 다운로드</span></button>
+                </div>
+            </div>
+            <div id="con2">
+                <img src="../img/opgg/advertise.png" style="width:90%; height: 90%;">
+            </div>
+            <div id="con3">
+                <div id="con3sub">
+                    OP.GG Talk 인기글
+                </div>
+                <div class="con3list">
+                    <div class="con3lisub">1</div>
+                    <div class="con3licon">
+                        <div class="con3licon_img"><img src="../img/nasa1.jpg"></div>
+                        <div class="con3licon_sub">11111111111111111111</div>
+                    </div>
+                </div>
+                <div class="con3list">
+                    <div class="con3lisub">2</div>
+                    <div class="con3licon">
+                        <div class="con3licon_img"><img src="../img/nasa1.jpg"></div>
+                        <div class="con3licon_sub">2222222222222222222222</div>
+                    </div>
+                </div>
+                <div class="con3list">
+                    <div class="con3lisub">3</div>
+                    <div class="con3licon">
+                        <div class="con3licon_img"><img src="../img/nasa1.jpg"></div>
+                        <div class="con3licon_sub">33333333333333333333</div>
+                    </div>
+                </div>
+                <div class="con3list">
+                    <div class="con3lisub">4</div>
+                    <div class="con3licon">
+                        <div class="con3licon_img"><img src="../img/nasa1.jpg"></div>
+                        <div class="con3licon_sub">444444444444444444</div>
+                    </div>
+                </div>
+                <div class="con3list">
+                    <div class="con3lisub">5</div>
+                    <div class="con3licon">
+                        <div class="con3licon_img"><img src="../img/nasa1.jpg"></div>
+                        <div class="con3licon_sub">55555555555555555</div>
+                    </div>
+                </div>
+            </div>
+            <div id="con4"></div>
+        </div>
+        <div id="footer">
+            <div></div>
+            <div id="ft1">
+                <table>
+                    <tr>
+                        <td style="font-size: 30px;">OP.GG</td>
+                        <td>OP.GG</td>
+                        <td>Products</td>
+                        <td>Apps</th>
+                        <td>Resources</td>
+                        <td>More</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>About OP.GG</td>
+                        <td>리그오브레전드 <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td>OP.GG Android App <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td>개인정보처리방침</td>
+                        <td>제휴</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Company</td>
+                        <td>데스크톱 <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td>OP.GG iOS App <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td>이용약관</td>
+                        <td>광고</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Blog</td>
+                        <td>발로란트 <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td>IFI.GG Android App</td>
+                        <td>도움말</td>
+                        <td>채용</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>로고 히스토리</td>
+                        <td>배틀그라운드 <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td>IFI.GG iOS App</td>
+                        <td>문의/피드백</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>오버워치 <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>이터널 리턴 <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>이스포츠 <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>톡피지지 <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Duo <img src="../img/opgg/icon-game-white.svg" width="16px" height="16px"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div></div>
+            <div id="ft2">
+                <div id="fttext">
+                    © 2012-2023 OP.GG. OP.GG isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. 
+                    League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+                </div>
+                <div id="fticon"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
