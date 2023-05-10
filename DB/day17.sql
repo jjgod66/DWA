@@ -71,38 +71,26 @@ SELECT deptcd, p_deptcd, LPAD(' ', (LEVEL - 1) * 4) || deptnm deptnm,
 
 SELECT *
   FROM board_test;
- 
+
+-- 실습1
 SELECT seq, LPAD(' ', (LEVEL - 1) * 4) || title title
   FROM board_test
   START WITH parent_seq IS NULL  
   CONNECT BY PRIOR seq = parent_seq
 ;
 
+-- 실습2
 SELECT seq, LPAD(' ', (LEVEL - 1) * 4) || title title
   FROM board_test
  START WITH parent_seq IS NULL
   CONNECT BY PRIOR seq = parent_seq
   ORDER BY seq DESC
+;
 
-SELECT seq, gn, CONNECT_BY_ROOT(gn) s_gn, parent_seq, LPAD(' ', (LEVEL - 1) * 4) || title title
+-- 실습3
+SELECT seq, gn, CONNECT_BY_ROOT(seq) s_gn,parent_seq, LPAD(' ', (LEVEL - 1) * 5) || title title
   FROM board_test
- START WITH parent_seq IS NULL  
+ START WITH parent_seq IS NULL
  CONNECT BY PRIOR seq = parent_seq
  ORDER BY gn DESC, seq
 ;
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
