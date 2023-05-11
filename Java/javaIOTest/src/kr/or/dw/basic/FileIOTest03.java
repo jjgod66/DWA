@@ -17,13 +17,15 @@ public class FileIOTest03 {
 			InputStreamReader isr = new InputStreamReader(System.in);
 			
 			// 문자 기반 파일 출력용 스트림 객체 생성
-			FileWriter fw = new FileWriter("C:\\Users\\012\\Documents\\test.txt");
+//			FileWriter fw = new FileWriter("C:\\Users\\012\\Documents\\test.txt");
+			FileWriter fw = new FileWriter("C:\\fileIOTest\\test.txt");
 			System.out.println("파일에 저장할 내용을 입력하세요.");
 			System.out.println("입력의 마지막은 Ctrl + z 입니다.");
 			
 			int c;
 			
 			// 콘솔에서 데이터를 입력할 때 입력의 끝은 'Ctrl + z' 키를 누르면 된다.
+			// Enter 쳐야함
 			while ((c = isr.read()) != -1) {
 				fw.write(c);
 			}

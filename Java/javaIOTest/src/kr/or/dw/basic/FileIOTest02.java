@@ -16,7 +16,8 @@ public class FileIOTest02 {
 			
 			// 파일 출력용 스트림 객체 생성
 			// 파일이 없으면 새로 만들고, 있으면 그 내용을 덮어쓰기 한다.
-			File file = new File("C:\\Users\\012\\Documents\\out.txt");
+//			File file = new File("C:\\Users\\012\\Documents\\out.txt");
+			File file = new File("C:\\fileIOTest\\out.txt");
 			FileOutputStream fout = new FileOutputStream(file);
 			
 			for (char ch = 'A'; ch <= 'Z'; ch++) {

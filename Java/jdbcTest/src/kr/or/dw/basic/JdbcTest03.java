@@ -19,7 +19,8 @@ public class JdbcTest03 {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "ksj", "java");
+//			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "ksj", "java");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "sj", "java");
 			
 			System.out.println("empno값을 입력하세요");
 			int input = Integer.parseInt(sc.nextLine());

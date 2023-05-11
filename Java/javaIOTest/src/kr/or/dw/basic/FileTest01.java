@@ -7,7 +7,8 @@ public class FileTest01 {
 	public static void main(String[] args) {
 		
 		// 형식1) new File(String 파일 또는 경로)
-		File file1 = new File("C:\\Users\\012\\Documents\\file.txt");
+//		File file1 = new File("C:\\Users\\012\\Documents\\file.txt");
+		File file1 = new File("C:\\fileIOTest\\file.txt");
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[File1]");
 		System.out.println("파일 명 : " + file1.getName());
 		System.out.println("path : " + file1.getPath());
@@ -15,7 +16,8 @@ public class FileTest01 {
 		System.out.println("파일인가? : " + file1.isFile());
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 		
-		File file2 = new File("C:\\Users\\012\\Documents");
+//		File file2 = new File("C:\\Users\\012\\Documents");
+		File file2 = new File("C:\\fileIOTest");
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[File2]");
 		System.out.println("파일 명 : " + file2.getName());
 		System.out.println("path : " + file2.getPath());
@@ -40,7 +42,8 @@ public class FileTest01 {
 		
 		//	- mkdirs() : 중간 부분의 경로가 없으면 그 중간 부분의 경로도 같이 만들어 준다.
 		
-		File file4 = new File("C:\\Users\\012\\Documents\\연습용");
+//		File file4 = new File("C:\\Users\\012\\Documents\\연습용");
+		File file4 = new File("C:\\fileIOTest\\연습용");
 		
 		System.out.println(file4.getName() + " 의 존재 여부 : " + file4.exists());
 		

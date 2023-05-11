@@ -19,7 +19,8 @@ public class FileIOTest04 {
 			InputStreamReader isr = new InputStreamReader(System.in);
 			
 			// 문자 기반 파일 출력용 스트림 객체 생성
-			FileOutputStream fout = new FileOutputStream("C:\\Users\\012\\Documents\\outTest.txt");
+//			FileOutputStream fout = new FileOutputStream("C:\\Users\\012\\Documents\\outTest.txt");
+			FileOutputStream fout = new FileOutputStream("C:\\fileIOTest\\outTest.txt");
 			OutputStreamWriter osw = new OutputStreamWriter(fout);
 			System.out.println("파일에 저장할 내용을 입력하세요.");
 			System.out.println("입력의 마지막은 Ctrl + z 입니다.");
