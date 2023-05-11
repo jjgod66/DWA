@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -57,8 +58,12 @@ public class FileUploadServlet extends HttpServlet {
 			}
 			
 			fileList.add(details);
-			
 		}
+		req.setAttribute("uploadFileList", fileList);
+		
+		String view = "/basic/04/fileList.jsp";
+		RequestDispatcher rd = req.getRequestDispatcher(view);
+		rd.forward(req, res);
 	}
 	
 	// Part 영역에서 업로드한 파일 이름을 구해서 반환하는 메서드

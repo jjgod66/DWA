@@ -13,5 +13,7 @@
 			파일 2 : <input type="file" name="fileUpLoad2"><br>
 			<input type="submit" value="파일 전송">
 		</form>
+		<hr>
+		<a href="<%=request.getContextPath()%>/UploadFileListServlet.do">Upload된 전체 파일 보기</a>
 	</body>
 </html>
