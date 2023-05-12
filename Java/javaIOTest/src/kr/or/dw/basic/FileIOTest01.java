@@ -19,13 +19,14 @@ public class FileIOTest01 {
 			//FileInputStream fin = new FileInputStream("파일의 경로");
 			
 			// 방법2
-			File file = new File("C:\\Users\\012\\Documents\\file.txt");
+//			File file = new File("C:\\Users\\012\\Documents\\file.txt");
+			File file = new File("C:\\fileIOTest\\file.txt");
 				FileInputStream fin = new FileInputStream(file);
-				InputStreamReader in = new InputStreamReader(fin, "utf-8");
+				InputStreamReader in = new InputStreamReader(fin, "UTF-8");
 				int c; 		// 읽어온 데이터를 저장할 변수
 				
 				while((c = in.read()) != -1) {
-					System.out.print(c);
+					System.out.print((char)c);
 				}
 				in.close();
 				fin.close();

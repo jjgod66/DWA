@@ -36,6 +36,7 @@ public class JdbcTest01 {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			// 2. DB시스템 접속 : Connection 객체 생성
+//			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "ksj", "java");
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "sj", "java");
 			
 			// 3. SQL문 작성 : SQL문을 작성하는 부분. SQL문은 대소문자를 구분하지 않는다.

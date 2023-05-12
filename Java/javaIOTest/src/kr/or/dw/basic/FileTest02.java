@@ -5,7 +5,8 @@ import java.io.File;
 public class FileTest02 {
 
 	public static void main(String[] args) {
-		File f1 = new File("C:/Users/012/Documents/out.txt");
+//		File f1 = new File("C:/Users/012/Documents/out.txt");
+		File f1 = new File("C:/fileIOTest/out.txt");
 		System.out.println(f1.getName() + "의 크기 : " + f1.length());
 		System.out.println("path : " + f1.getPath());
 		System.out.println("absolutePath : " + f1.getAbsolutePath());

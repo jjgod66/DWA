@@ -2,6 +2,7 @@ package kr.or.dw.basic;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,7 +27,8 @@ public class ObjectIOTest {
 		// 파일 저장용 스트림 객체 생성
 		try {
 			
-			FileOutputStream fout = new FileOutputStream("C:/Users/012/Documents/연습용/memObj.bin");
+//			FileOutputStream fout = new FileOutputStream("C:/Users/012/Documents/연습용/memObj.bin");
+			FileOutputStream fout = new FileOutputStream("C:/fileIOTest/연습용/memObj.bin");
 			BufferedOutputStream bout = new BufferedOutputStream(fout);
 			ObjectOutputStream oout = new ObjectOutputStream(bout);
 			
@@ -52,12 +54,13 @@ public class ObjectIOTest {
 		
 		// 입력용 스트림 객체 생성
 		try {
-			oin = new ObjectInputStream(new BufferedInputStream(new FileInputStream("C:/Users/012/Documents/연습용/memObj.bin")));
+//			oin = new ObjectInputStream(new BufferedInputStream(new FileInputStream("C:/Users/012/Documents/연습용/memObj.bin")));
+			oin = new ObjectInputStream(new BufferedInputStream(new FileInputStream("C:/fileIOTest/연습용/memObj.bin")));
 			
 			Object obj;		// 읽어온 객체를 저장할 변수
 			
 			// readObject() 메서드의 반환값은 Object형이다.
-			// readObject() 메서드가 데이터를 끝까지 다 읽어오면 EOFEWxception이 발생한다.
+			// readObject() 메서드가 데이터를 끝까지 다 읽어오면 EOFException이 발생한다.
 			while((obj = oin.readObject()) != null) {
 				Member mem = (Member)obj;
 				System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
@@ -74,6 +77,7 @@ public class ObjectIOTest {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.out.println("에러~");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -92,7 +96,7 @@ class Member implements Serializable {
 	// transient : 직렬화가 되지 않을 인스턴스 변수에 지정한다.(직렬화 시키고 싶지 않은)
     //			      직렬화가 되지 않은 인스턴스 변수는 기본값으로 저장된다.
 	private transient int age;
-	private transient String addr;
+	private /* transient */ String addr;
 	
 	public Member(String name, int age, String addr) {
 		this.name = name;

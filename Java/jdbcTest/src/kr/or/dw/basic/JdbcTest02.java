@@ -19,7 +19,8 @@ public class JdbcTest02 {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "ksj", "java");
+//			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "ksj", "java");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "sj", "java");
 			String sql = "select * from emp";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);

@@ -8,7 +8,8 @@ public class FileTest03 {
 	public static void main(String[] args) {
 		
 		FileTest03 test = new FileTest03();
-		File file = new File("C:/Users/012/Documents");
+//		File file = new File("C:/Users/012/Documents");
+		File file = new File("C:/fileIOTest");
 		test.displayFileList(file);
 		
 	}
