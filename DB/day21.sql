@@ -249,4 +249,8 @@ EXCEPTION
 	DBMS_OUTPUT.PUT_LINE('NO_EMP');
 END;
 /
+
+SELECT *
+FROM emp;
+dept
 	

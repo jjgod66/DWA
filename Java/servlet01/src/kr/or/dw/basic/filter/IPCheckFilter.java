@@ -34,10 +34,10 @@ public class IPCheckFilter implements Filter {
 		// IPv4로 보면 127.0.0.1이 맞다.
 		// 이클립스에서 톰캣 실행시 자동으로 설정된 IP 값을 가져오는데 default로 IPv6로 잡혀있기 때문
 		String ip = request.getRemoteAddr();	// 접속한 IP주소
-		System.out.println(ip);
+		System.out.println(ip.split(";")[0] + ip.split(";")[1]);
 		
-		if (ip != null && ipMap.containsKey(ip)) {	// 목록에 IP가 있으면
-			if ("Y".equals(ipMap.get(ip))) {		// 허용되는지 여부 확인
+		if (ip != null && ipMap.containsKey(ip.split(";")[0])) {	// 목록에 IP가 있으면
+			if ("Y".equals(ipMap.get(ip.split(";")[0]))) {		// 허용되는지 여부 확인
 				chain.doFilter(request, response);
 			} else {
 				response.setContentType("text/html; charset=utf-8");
