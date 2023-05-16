@@ -16,5 +16,5 @@ public interface IMemberService {
 	 * 전체 회원 정보를 DB에서 가져와 List에 담아서 반환하는 메서드
 	 * @return 회원정보(MemberVO)가 저장될 List 객체
 	 */
-	public List<MemberVO> getAllMember();
+	public List<MemberVO> getAllMember();  
 }
