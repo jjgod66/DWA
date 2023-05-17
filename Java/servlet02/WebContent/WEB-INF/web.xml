@@ -21,11 +21,13 @@
   </filter-mapping>
   
   <servlet>
-  	<servlet-name>testController</servlet-name>
-  	<servlet-class>kr.or.dw.controller.TestController</servlet-class>
+  	<servlet-name>webController</servlet-name>
+<!--   	<servlet-class>kr.or.dw.controller.TestController</servlet-class> -->
+<!--   	<servlet-class>kr.or.dw.controller.TestController2</servlet-class> -->
+  	<servlet-class>kr.or.dw.controller.WebController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>testController</servlet-name>
+  	<servlet-name>webController</servlet-name>
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
 </web-app>

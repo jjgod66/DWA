@@ -7,6 +7,14 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>멤버 리스트</title>
+		<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery-3.5.1.js"></script>
+		<script>
+			$(function(){
+				$("#addBtn").on("click", function() {
+					location.href="<%= request.getContextPath() %>/member/memberForm.do";
+				})
+			})
+		</script>
 	</head>
 	<body>
 		<h2>회원 목록 보기</h2>
