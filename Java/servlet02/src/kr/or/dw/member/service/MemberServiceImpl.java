@@ -28,6 +28,21 @@ public class MemberServiceImpl implements IMemberService {
 	public List<MemberVO> getAllMember() {
 		return dao.getAllMember();
 	}
+
+	@Override
+	public int getMemberCount(String mem_id) {
+		return dao.getMemberCount(mem_id);
+	}
+
+	@Override
+	public int insertMember(MemberVO memVo) {
+		return dao.insertMember(memVo);
+	}
+
+	@Override
+	public MemberVO getMember(String mem_id) {
+		return dao.getMember(mem_id);
+	}
 	
 	
 }

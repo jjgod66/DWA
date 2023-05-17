@@ -16,4 +16,25 @@ public interface IMemberDao {
 	 * @return 회원정보(MemberVO)가 저장될 List 객체
 	 */
 	public List<MemberVO> getAllMember();
+
+	/**
+	 * 회원을 등록할 때 ID의 중복 확인을 하는 메서드
+	 * @param mem_id(회원ID)
+	 * @return 회원ID를 조건으로 한 SELECT COUNT() 값
+	 */
+	public int getMemberCount(String mem_id);
+
+	/**
+	 * 회원의 정보를 등록하는 메서드
+	 * @param memVo(MemberVO 객체)
+	 * @return INSERT 대상 수
+	 */
+	public int insertMember(MemberVO memVo);
+
+	/**
+	 * 회원의 상세 정보를 조회하는 메서드
+	 * @param mem_id(회원ID)
+	 * @return MemberVO(회원 객체)
+	 */
+	public MemberVO getMember(String mem_id);
 }

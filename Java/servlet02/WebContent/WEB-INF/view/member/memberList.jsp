@@ -39,7 +39,7 @@
 						for (MemberVO vo : memList) {
 					%>
 							<tr>
-								<td> <%= vo.getMem_id() %> </td>
+								<td> <a href="<%= request.getContextPath() %>/member/memberView.do?mem_id=<%= vo.getMem_id() %>"> <%= vo.getMem_id() %> </a> </td>
 								<td> <%= vo.getMem_name() %> </td>
 								<td> <%= vo.getMem_tel() %> </td>
 								<td> <%= vo.getMem_addr() %> </td>

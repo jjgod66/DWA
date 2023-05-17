@@ -66,7 +66,7 @@ public class WebController extends HttpServlet {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse  res) throws ServletException, IOException {
 		doGet(req, res);
 	}
 
