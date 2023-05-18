@@ -8,20 +8,35 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.or.dw.member.service.IMemberService;
 import kr.or.dw.member.service.MemberServiceImpl;
+import kr.or.dw.vo.MemberVO;
 import kr.or.dw.web.IAction;
 
 public class MemberUpdateAction implements IAction {
 
 	@Override
 	public boolean isRedirect() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		IMemberService service = MemberServiceImpl.getInstance();
 		
-		return null;
+		String id = req.getParameter("id");
+		String name = req.getParameter("name");
+		String tel = req.getParameter("tel");
+		String addr = req.getParameter("addr");
+		
+		MemberVO memVo = new MemberVO();
+		
+		memVo.setMem_id(id);
+		memVo.setMem_name(name);
+		memVo.setMem_tel(tel);
+		memVo.setMem_addr(addr);
+		
+		service.updateMember(memVo);
+		
+		return "/member/memberList.do";
 	}
 
 }

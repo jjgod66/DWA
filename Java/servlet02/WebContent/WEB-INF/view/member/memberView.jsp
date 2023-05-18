@@ -8,23 +8,53 @@
 		<title>회원 정보 상세 보기</title>
 		<script type="text/javascript" src="<%= request.getContextPath() %>/js/jquery-3.5.1.js"></script>
 		<script>
+		<%
+			MemberVO memVo = (MemberVO)request.getAttribute("memDtl");
+		%>
 			$(function(){
+				let changeFlag = false;
+				let mem_name = "<%= memVo.getMem_name() %>";
+				let mem_tel = "<%= memVo.getMem_tel() %>";
+				let mem_addr = "<%= memVo.getMem_addr() %>";
+				let oldValArr = [mem_name, mem_tel, mem_addr];
+				
+				$("#memberUpdateForm").on("propertychange keyup paste", function () {
+					let inputArr = $(this).find("input[type=text]");
+					for (let i = 0; i < inputArr.length; i++) {
+						if ($(inputArr[i]).val() == oldValArr[i]) {
+							changeFlag = false;
+						} else {
+							changeFlag = true;
+							break;
+						};
+					};
+					console.log(changeFlag);
+				});
+				
 				$("#listBtn").on("click", function () {
 					location.href="<%= request.getContextPath() %>/member/memberList.do";
+				});
+				$("#updateBtn").on("click", function () {
+					if(changeFlag) {
+					$("#memberUpdateForm").submit();
+					} else {
+						alert("변경된 정보가 없습니다.");
+					}
+				});
+				$("#deleteBtn").on("click", function () {
+					location.href="<%= request.getContextPath() %>/member/memberDelete.do?mem_id=<%= memVo.getMem_id() %>";
 				});
 			})
 		</script>
 	</head>
 	<body>
-		<%
-			MemberVO memVo = (MemberVO)request.getAttribute("memDtl");
-		%>
 		<h2>회원 정보 상세 보기</h2>
-		<form method="post" action="<%=request.getContextPath()%>/member/memberUpdate.do" id="memberUpdate">
+		<form id="memberUpdateForm" method="post" action="<%=request.getContextPath()%>/member/memberUpdate.do">
 			<table border="1">
 				<tr>
 					<td>회원ID</td>
-					<td><%= memVo.getMem_id() %></td>
+					<td ><%= memVo.getMem_id() %></td>
+					<input type="hidden" name="id" value="<%= memVo.getMem_id() %>">
 				</tr>
 				<tr>
 					<td>회원이름</td>
@@ -41,8 +71,8 @@
 				<tr>
 					<td colspan="2">
 						<input type="button" value="저장" id="updateBtn">
+						<input type="button" value="삭제" id="deleteBtn">
 						<input type="button" value="회원목록" id="listBtn">
-						<input type="button" value="정보삭제" id="deleteBtn">
 					</td>
 				</tr>
 			</table>

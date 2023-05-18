@@ -33,7 +33,7 @@ public class MemberInsertAction implements IAction {
 		memVo.setMem_tel(tel);
 		memVo.setMem_addr(addr);
 		
-		int result = service.insertMember(memVo);
+		service.insertMember(memVo);
 		
 		return "/member/memberList.do";
 	}

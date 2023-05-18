@@ -20,11 +20,18 @@
 		<h2>회원 목록 보기</h2>
 			<table border="1">
 				<thead>
-					<tr>
-						<td colspan="4">
-							<input type="button" id="addBtn" value="회원추가">
-						</td>
-					</tr>
+					<%
+						MemberVO memVo = (MemberVO)session.getAttribute("testUser");
+						if (memVo.getMem_auth().equals("A")) {
+					%>		
+						<tr>
+							<td colspan="4">
+									<input type="button" id="addBtn" value="회원추가">
+							</td>
+						</tr>
+					<% 		
+						}
+					%>
 					<tr>
 						<th>ID</th>
 						<th>이름</th>

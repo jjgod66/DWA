@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.or.dw.member.service.IMemberService;
 import kr.or.dw.member.service.MemberServiceImpl;
@@ -27,6 +28,17 @@ public class MemberListAction implements IAction {
 		
 		req.setAttribute("memList", memList);
 		view = "/member/memberList.jsp";
+		
+		HttpSession session = req.getSession();
+		MemberVO testUser = new MemberVO();
+		testUser.setMem_id("admin");
+		testUser.setMem_name("관리자");
+		testUser.setMem_tel("0707-4865-4195");
+		testUser.setMem_addr("XXXXX");
+		testUser.setMem_auth("B");
+		
+		session.setAttribute("testUser", testUser);
+		
 		return view;
 	}
 

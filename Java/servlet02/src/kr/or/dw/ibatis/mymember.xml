@@ -7,6 +7,7 @@
 	<select id="getAllMember" resultClass="memVo">
 		SELECT *
 		  FROM mymember	
+		 ORDER BY mem_id ASC
 	</select>
 	
 	<select id="getMemberCount" parameterClass="String" resultClass="int">
@@ -25,4 +26,16 @@
 		  FROM mymember
 		 WHERE mem_id = #mem_id#
 	</select>
+	
+	<update id="updateMember" parameterClass="memVo">
+		UPDATE mymember SET  mem_name = #mem_name#
+		   					,mem_tel  = #mem_tel#
+		   					,mem_addr = #mem_addr#
+		 WHERE mem_id = #mem_id#
+	</update>
+	
+	<delete id="deleteMember" parameterClass="String">
+		DELETE FROM mymember
+		 WHERE mem_id = #mem_id#
+	</delete>
 </sqlMap>
