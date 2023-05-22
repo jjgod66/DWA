@@ -27,12 +27,16 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="g3.exerd" partName="g3.exerd" path="C:/DWA/g3/TA/newProject/g3.exerd" title="g3.exerd" tooltip="newProject/g3.exerd" workbook="DefaultEditorWorkbook">
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="g3.exerd" partName="g3.exerd" path="C:/DWA/g3/TA/newProject/g3.exerd" title="g3.exerd" tooltip="newProject/g3.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/g3.exerd"/>
+</editor>
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="g33.exerd" partName="g33.exerd" path="C:/DWA/g3/TA/newProject/g33.exerd" title="g33.exerd" tooltip="newProject/g33.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/newProject/g33.exerd"/>
 </editor>
 </editors>
 <views>
@@ -45,7 +49,7 @@
 <element path="/newProject"/>
 </expanded>
 <selection>
-<element path="/newProject/ex1.exerd"/>
+<element path="/newProject/test covid.exerd"/>
 </selection>
 </viewState>
 </view>
@@ -154,63 +158,59 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/ex1.exerd"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/ex2.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/g3.exerd"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/newProject/.project"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/newProject/g33.exerd"/>
 </editors>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex1.exerd" index="0"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex1.exerd" index="0"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex1.exerd" index="0"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex1.exerd" index="0"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item historyLabel="ex1.exerd" index="0"/>
-<item historyLabel=".project" index="3">
-<position/>
-</item>
-<item historyLabel="ex1.exerd" index="0"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex1.exerd" index="0"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex1.exerd" index="0"/>
-<item historyLabel="g3.exerd" index="2"/>
-<item historyLabel="ex2.exerd" index="1"/>
-<item active="true" historyLabel="g3.exerd" index="2"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item historyLabel="g33.exerd" index="1"/>
+<item historyLabel="g3.exerd" index="0"/>
+<item active="true" historyLabel="g33.exerd" index="1"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -228,6 +228,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="g33.exerd" tooltip="newProject/g33.exerd">
+<persistable path="/newProject/g33.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name=".project" tooltip="newProject/.project">
 <persistable path="/newProject/.project"/>
 </file>
