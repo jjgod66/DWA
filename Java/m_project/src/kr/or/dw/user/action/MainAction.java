@@ -17,6 +17,9 @@ public class MainAction implements IAction {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	
+		req.setAttribute("title_nm", "Starter");
+		
 		return "/user/main.jsp";
 	}
 

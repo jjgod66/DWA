@@ -36,6 +36,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					href="index3.html" class="nav-link">Home</a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a href="#"
 					class="nav-link">Contact</a></li>
+				<li class="nav-item d-none d-sm-inline-block"><a href="<%=request.getContextPath() %>/user/userLoginForm.do"
+					class="nav-link">Log In</a></li>
 			</ul>
 
 			<!-- Right navbar links -->
@@ -250,7 +252,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1 class="m-0">Starter Page</h1>
+							<h1 class="m-0"><%= request.getAttribute("title_nm") %> Page</h1>
 						</div>
 						<!-- /.col -->
 						<div class="col-sm-6">
