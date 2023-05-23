@@ -60,5 +60,16 @@ public class UserDaoImpl implements IUserDao {
 		return vo;
 	}
 
+	@Override
+	public void updateUserPicPath(UserVO vo) {
+		try {
+			client.update("user.updateUserPicPath", vo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+
 
 }
