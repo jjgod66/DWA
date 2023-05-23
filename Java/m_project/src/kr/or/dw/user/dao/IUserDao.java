@@ -9,4 +9,7 @@ public interface IUserDao {
 	public int insertUser(UserVO vo);	// 회원 정보를 등록하는 메서드
 	
 	public UserVO loginUser(String email);
+	
+	public void updateUserPicPath(UserVO vo);
+	
 }
