@@ -15,6 +15,7 @@
 		  그렇게 되면 문장이 너무 길어질 수 있다. 그래서 전체 이름을 대신할 alias를 설정할 수 있다.
 		 (형식) <typeAlias alias = "alias명" type = "클래스의 전체 이름" /> -->
 	 <typeAlias alias = "userVo" type="kr.or.dw.user.vo.UserVO" />
+	 <typeAlias alias = "boardVo" type="kr.or.dw.board.vo.BoardVO" />
 	
 	<!-- DB와 연결을 처리하는 부분 -->
 	<transactionManager type="JDBC">
@@ -30,5 +31,6 @@
 	<!-- 실행할 SQL문은 xml 문서로 따로 만든 후 그 xml 문서를 아래와 같이 등록하면 된다. -->
 	<!-- <sqlMap resource = "경로명/파일명.xml" /> -->
 	<sqlMap resource="kr/or/dw/ibatis/user.xml" />
+	<sqlMap resource="kr/or/dw/ibatis/board.xml" />
 	
 </sqlMapConfig>

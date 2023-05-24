@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.or.dw.web.IAction;
 
-public class myPageAction implements IAction {
+public class MyPageAction implements IAction {
 
 	@Override
 	public boolean isRedirect() {
