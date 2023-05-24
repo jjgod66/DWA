@@ -55,6 +55,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					class="nav-link">Contact</a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a href="<%=request.getContextPath() %>/user/userLoginForm.do"
 					class="nav-link" id="loginCheck">Log In</a></li>
+				<li class="nav-item d-none d-sm-inline-block"><a href="<%=request.getContextPath() %>/board/boardMain.do"
+				class="nav-link">Board</a></li>
 			</ul>
 
 			<!-- Right navbar links -->

@@ -162,7 +162,8 @@
 
       	
       	<Context docBase="C:/upload/userProfile/" path="/profilePath/" reloadable="true"/>
-      <Context docBase="project_mj" path="/project_mj" reloadable="true" source="org.eclipse.jst.jee.server:project_mj"/></Host>
+      	<Context docBase="m_project" path="/" reloadable="true" source="org.eclipse.jst.jee.server:m_project"/>
+      </Host>
     </Engine>
   </Service>
 </Server>
