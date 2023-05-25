@@ -30,6 +30,7 @@
 								%>
 								<a class="btn btn-primary btn-sm" href="<%=request.getContextPath()%>/board/boardInsert.do">글작성</a>
 								<% } %>
+								&nbsp;
 								<input type="text" class="form-control" placeholder="Search">
 								<div class="input-group-append">
 									<div class="btn btn-primary">
@@ -93,6 +94,7 @@
 								</tr>
 							<% } %>
 							</tbody>
+				
 						</table>
 						<div class="container"style="margin-top:20px;">
 							<%

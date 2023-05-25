@@ -13,16 +13,16 @@ import kr.or.dw.board.vo.BoardVO;
 import kr.or.dw.user.vo.UserVO;
 import kr.or.dw.web.IAction;
 
-public class ContentInsertAction implements IAction {
+public class ContentInsertAction implements IAction{
 
 	@Override
 	public boolean isRedirect() {
-		return false;
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 	@Override
-	public String process(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
+	public String process(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
 		
@@ -38,9 +38,17 @@ public class ContentInsertAction implements IAction {
 		
 		IBoardService service = BoardServiceImpl.getInstance();
 		int bd_no = 0;
-		bd_no = service.insertContent(boardVo);
 		
-		return null;
+		// 글 수정일 때
+		if(req.getParameter("bd_no") != null) {
+			bd_no = Integer.parseInt(req.getParameter("bd_no"));
+			boardVo.setBd_no(bd_no);
+			int result = service.updateContent(boardVo);
+		}else {
+			// 글 등록 일때
+			bd_no = service.insertContent(boardVo);
+		}
+		return "/board/boardView.do?bd_no=" + bd_no;
 	}
-
+	
 }

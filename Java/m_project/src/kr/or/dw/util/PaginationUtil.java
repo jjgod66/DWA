@@ -68,7 +68,7 @@ public class PaginationUtil {
 		stringBuilder.append("<ul class='pagination'>\n");
 		
 		if (config.get("page") > 1) {
-			stringBuilder.append("<li class='page-item'><a class='page-link' href='?page=" + (config.get("page") - 1) + paramStr + "'>&lt;&lt;</a></li>\n");
+			stringBuilder.append("<li class='page-item'><a class='page-link' href='?page=" + (config.get("page") - 1) + paramStr + "'>&lt;</a></li>\n");
 		}
 		
 		
@@ -92,7 +92,7 @@ public class PaginationUtil {
 		}
 		
 		if (config.get("page") < config.get("totalPage")) {
-			stringBuilder.append("<li class='page-item'><a class='page-link' href='?page=" + (config.get("page") + 1) + paramStr + "'>&gt;&gt;</a></li>\n");
+			stringBuilder.append("<li class='page-item'><a class='page-link' href='?page=" + (config.get("page") + 1) + paramStr + "'>&gt;</a></li>\n");
 		}
 		
 		stringBuilder.append("</ul class='pagination'>\n");

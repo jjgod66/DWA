@@ -7,6 +7,7 @@ import java.util.Map;
 import com.ibatis.sqlmap.client.SqlMapClient;
 
 import kr.or.dw.board.vo.BoardVO;
+import kr.or.dw.board.vo.ReplyVO;
 import kr.or.dw.util.BuildSqlMapClient;
 
 public class BoardDaoImpl implements IBoardDao {
@@ -50,12 +51,97 @@ public class BoardDaoImpl implements IBoardDao {
 	@Override
 	public int insertContent(BoardVO boardVo) {
 		int bd_no = 0;
+		
 		try {
-			bd_no = (int) client.queryForObject("board.insertContent", boardVo);
+			bd_no = (int) client.insert("board.insertContent", boardVo);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 		return bd_no;
+	}
+
+	@Override
+	public BoardVO selectBoardView(int bd_no) {
+		BoardVO boardVo = null;
+		
+		try {
+			boardVo = (BoardVO) client.queryForObject("board.selectBoardView", bd_no);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return boardVo;
+	}
+
+	@Override
+	public int updateContent(BoardVO boardVo) {
+		int result = 0;
+		
+		try {
+			result = client.update("board.updateContent", boardVo);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public void deleteContent(int bd_no) {
+		try {
+			client.update("board.deleteContent", bd_no);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void increaseBoardHit(int bd_no) {
+		try {
+			client.update("board.increaseBoardHit", bd_no);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public int insertReply(ReplyVO replyVo) {
+		int re_no = 0;
+		
+		try {
+			re_no = (int) client.insert("board.insertReply", replyVo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return re_no;
+	}
+
+	@Override
+	public ReplyVO selectReply(int re_no) {
+		ReplyVO replyVo = null;
+		
+		try {
+			replyVo = (ReplyVO) client.queryForObject("board.selectReply", re_no);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return replyVo;
+	}
+
+	@Override
+	public List<ReplyVO> selectReplyList(int bd_no) {
+		List<ReplyVO> replyList = null;
+		
+		try {
+			replyList = client.queryForList("board.selectReplyList", bd_no);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return replyList;
 	}
 	
 }	
