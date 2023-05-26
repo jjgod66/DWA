@@ -143,5 +143,31 @@ public class BoardDaoImpl implements IBoardDao {
 		}
 		return replyList;
 	}
+
+	@Override
+	public int updateReply(ReplyVO replyVo) {
+		int result = 0;
+		
+		try {
+			result = client.update("board.updateReply", replyVo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public int deleteReply(int re_no) {
+		int result = 0;
+		
+		try {
+			result = client.update("board.deleteReply", re_no);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 	
 }	

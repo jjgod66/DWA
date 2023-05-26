@@ -161,4 +161,11 @@
 	 ORDER BY re_no DESC	      
 	</select>
 	
+	<update id="updateReply" parameterClass="replyVO">
+		UPDATE t_board_re SET re_content = #re_content# WHERE re_no = #re_no#
+	</update>
+	
+	<update id="deleteReply" parameterClass="int">
+		UPDATE t_board_re SET gb_del = 'Y' WHERE re_no = #re_no#
+	</update>
 </sqlMap>

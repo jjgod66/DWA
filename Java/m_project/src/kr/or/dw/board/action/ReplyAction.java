@@ -33,17 +33,44 @@ public class ReplyAction implements IAction {
 		String nick = userVo.getNick();
 		int bd_no = Integer.parseInt(req.getParameter("bd_no"));
 		String re_content = req.getParameter("re_content");
+		String cmd = req.getParameter("cmd");
 		
-		ReplyVO replyVo = new ReplyVO();
-		replyVo.setBd_no(bd_no);
-		replyVo.setUser_no(user_no);
-		replyVo.setNick(nick);
-		replyVo.setRe_content(re_content);
-
-		int re_no = service.insertReply(replyVo);
-		ReplyVO resultReplyVo = service.selectReply(re_no);
+		/*
+		 * String cmd
+		 * 댓글 관련 Action을 하나만 사용하기 위해서
+		 * parameter를 사용하여 로직을 구분한다.
+		 * 
+		 * "insert" : 댓글 등록
+		 * "update" : 댓글 수정
+		 * "delete" : 댓글 삭제
+		 */
 		
-		req.setAttribute("replyVo", resultReplyVo);
+		if (cmd.equals("insert")) {
+			ReplyVO replyVo = new ReplyVO();
+			replyVo.setBd_no(bd_no);
+			replyVo.setUser_no(user_no);
+			replyVo.setNick(nick);
+			replyVo.setRe_content(re_content);
+			
+			int re_no = service.insertReply(replyVo);
+			ReplyVO resultReplyVo = service.selectReply(re_no);
+			
+			req.setAttribute("replyVo", resultReplyVo);
+		} else if (cmd.equals("update")) {
+			int re_no = Integer.parseInt(req.getParameter("re_no"));
+			ReplyVO replyVo = new ReplyVO();
+			replyVo.setRe_no(re_no);
+			replyVo.setRe_content(re_content);
+			
+			int result = service.updateReply(replyVo);
+			
+			req.setAttribute("result", result);
+		} else if (cmd.equals("delete")) {
+			int re_no = Integer.parseInt(req.getParameter("re_no"));
+			int result = service.deleteReply(re_no);
+			
+			req.setAttribute("result", result);
+		}
 		
 		return "/board/reply_ajax.jsp";
 	}

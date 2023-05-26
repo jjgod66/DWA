@@ -25,4 +25,8 @@ public interface IBoardService {
 	ReplyVO selectReply(int re_no);
 
 	Object selectReplyList(int bd_no);
+
+	int updateReply(ReplyVO replyVo);
+
+	int deleteReply(int re_no);
 }
