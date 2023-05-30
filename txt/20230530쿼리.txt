@@ -1,0 +1,13 @@
+INSERT INTO tag_info VALUES ('외식');
+INSERT INTO tag_info VALUES ('데이트');
+INSERT INTO tag_info VALUES ('접대');
+INSERT INTO tag_info VALUES ('친구');
+INSERT INTO tag_info VALUES ('회식');
+INSERT INTO tag_info VALUES ('모임');
+INSERT INTO tag_info VALUES ('기념일');
+INSERT INTO tag_info VALUES ('혼자');
+INSERT INTO tag_info VALUES ('외국손님');
+INSERT INTO tag_info VALUES ('가족식사');
+INSERT INTO tag_info VALUES ('아이동반');
+INSERT INTO tag_info VALUES ('여자들끼리');zzzzzzzzzzzzzzzzzzzzzzzzz
+INSERT INTO tag_info VALUES ('남자들끼리');
