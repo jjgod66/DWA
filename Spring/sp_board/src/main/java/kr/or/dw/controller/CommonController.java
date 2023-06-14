@@ -37,6 +37,7 @@ public class CommonController {
 		
 		return url;
 	}
+	
 	@RequestMapping("/common/login")
 	public String login(String id, String pwd, HttpSession session) throws SQLException{
 		String url = "redirect:/index.do";
