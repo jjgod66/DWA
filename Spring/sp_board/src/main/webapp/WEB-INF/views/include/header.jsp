@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li>
       <c:forEach items="${menuList}" var="menu">
       	<li class="nav-item">
-      		<a href="javascript:subMenu('${menu.mcode }'); goPage('${menu.murl }');" class="nav-link">${menu.mname }</a>
+      		<a href="javascript:subMenu('${menu.mcode }'); goPage('${menu.murl }', '${menu.mcode }');" class="nav-link">${menu.mname }</a>
       	</li>
       </c:forEach>
     </ul>
@@ -175,7 +175,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="<%=request.getContextPath() %>/resources/bootstrap/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">${loginUser.name != null ? loginUser.name : "" }</a>
         </div>
       </div>
 

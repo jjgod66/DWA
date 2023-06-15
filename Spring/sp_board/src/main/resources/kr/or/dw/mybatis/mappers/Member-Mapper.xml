@@ -11,4 +11,9 @@
 		 WHERE id = #{id}
 	</select>
 
+	<select id="selectAllMemberList" resultType="member">
+		SELECT *
+		  FROM member
+	 	 ORDER BY regdate DESC
+	</select>
 </mapper>
