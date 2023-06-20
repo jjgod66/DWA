@@ -42,4 +42,10 @@ public class MemberServiceImpl implements MemberService{
 		return member;
 	}
 
+	@Override
+	public void regist(MemberVO member) throws SQLException{
+		memberDAO.insertMember(member);
+		
+	}
+
 }

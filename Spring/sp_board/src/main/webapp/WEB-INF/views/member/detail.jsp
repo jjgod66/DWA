@@ -8,7 +8,7 @@
 			
 			<!-- 콘텐츠 헤더 -->
 			<div class="login-logo">
-				<a href="<%=request.getContextPath()%>/member/registForm.do"><b>회원 등록</b></a>
+				<a href="<%=request.getContextPath()%>/member/detailForm.do?id=${member.id}"><b>회원 상세</b></a>
 			</div>
 			
 			<!-- 콘텐츠 -->
@@ -19,7 +19,9 @@
 						<!-- 프로필 사진 선택 부분 -->
 						<div class="input-group mb-3">
 							<div class="mailbox-attachments clearfix" style="text-align: center;">
-								<div class="mailbox-attachment-icon has-img" id="pictureView" style="border: 1px solid green; height: 200px; width: 140px; margin: 0 auto;"></div>
+								<div class="mailbox-attachment-icon has-img" id="pictureView" style="border: 1px solid green; height: 200px; width: 140px; margin: 0 auto;">
+									<img src="${result }">
+								</div>
 								<div class="mailbox-attachment-info">
 									<div class="input-group input-group-sm">
 										<label for="inputFile" class="btn btn-warning btn-sm btn-flat input-group-addon">파일선택</label>
@@ -56,7 +58,7 @@
 								<span style="color: red; font-weight: bold;">*</span>이 름
 							</label>
 							<div class="col-sm-9 input-group-sm">
-								<input name="name" type="text" id="name" class="form-control" placeholder="이름을 입력하세요">
+								<input name="name" type="text" id="name" class="form-control" placeholder="이름을 입력하세요" value="">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -72,7 +74,7 @@
 						<div class="form-group row">
 							<label for="email" class="col-sm-3" style="font-size: 0.9em;">&nbsp;&nbsp;이메일</label>
 							<div class="col-sm-9 input-group-sm">
-								<input name="email" type="text" id="email" class="form-control"	placeholder="example@naver.com">
+								<input name="email" type="text" id="email" class="form-control"	placeholder="example@naver.com" value="">
 							</div>
 						</div>
 						<div class="form-group row">
@@ -89,10 +91,16 @@
 					</div>
 					<div class="card-footer">
 						<div class="row">
-							<div class="col-sm-6">
-								<button type="button" id="registBtn" class="btn btn-info" onclick="submit_go();">가입하기</button>
+							<div class="col-sm-3">
+								<button type="button" id="modifyBtn" class="btn btn-info" onclick="">수정</button>
 							</div>
-							<div class="col-sm-6">
+							<div class="col-sm-3">
+								<button type="button" id="cancelBtn" class="btn btn-danger float-right" onclick="CloseWindow();">&nbsp;&nbsp;&nbsp;취&nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
+							</div>
+							<div class="col-sm-3">
+								<button type="button" id="cancelBtn" class="btn btn-danger float-right" onclick="CloseWindow();">&nbsp;&nbsp;&nbsp;취&nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
+							</div>
+							<div class="col-sm-3">
 								<button type="button" id="cancelBtn" class="btn btn-danger float-right" onclick="CloseWindow();">&nbsp;&nbsp;&nbsp;취&nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
 							</div>
 						</div>
@@ -105,4 +113,3 @@
 
 </div>
 
-<%@ include file="regist_js.jsp" %>

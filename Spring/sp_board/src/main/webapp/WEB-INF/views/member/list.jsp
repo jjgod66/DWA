@@ -3,6 +3,7 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 	<div class="content-wrapper">
 	<jsp:include page="../content_header.jsp">
@@ -12,9 +13,11 @@
 	
 	    <!-- Main content -->
     	<section class="content">
-    	  <div class="card">    		
+    	  <div class="card">
     	  	<div class="card-header with-border">
-    	  		<button type="button" class="btn btn-primary" onclick="OpenWindow('registForm.do', '회원등록', 650, 750);">회원등록</button>
+	    	  	<sec:authorize access="hasAnyRole('ROLE_ADMIN, ROLE_MANAGER')">
+    		  		<button type="button" class="btn btn-primary" onclick="OpenWindow('registForm.do', '회원등록', 650, 750);">회원등록</button>
+    		  	</sec:authorize>    		
     	  		<div id="keyword" class="card-tools" style="width:550px;">
 				  <div class="input-group row">	
 				  <!-- sort num -->
@@ -57,7 +60,7 @@
 		               	
                	     	<c:forEach items="${memberList}" var="member">
 			               	<tr>
-			               		<td><a href="">${member.id }</a></td>
+			               		<td><a href="" onclick="OpenWindow('detailForm.do?id=${member.id }', '회원상세', 650, 750);">${member.id }</a></td>
 			               		<td>${member.pwd }</td>
 			               		<td>${member.email }</td>
 			               		<td><a href="tel:010-1234-5678">${member.phone }</a></td>
