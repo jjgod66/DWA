@@ -48,4 +48,19 @@ public class MemberServiceImpl implements MemberService{
 		
 	}
 
+	@Override
+	public void modify(MemberVO member) throws SQLException {
+		memberDAO.updateMember(member);
+	}
+
+	@Override
+	public void remove(String id) throws SQLException {
+		memberDAO.deleteMember(id);
+	}
+
+	@Override
+	public void disabled(String id) throws SQLException {
+		memberDAO.disabledMember(id);
+	}
+
 }

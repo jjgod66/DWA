@@ -60,7 +60,7 @@
 		               	
                	     	<c:forEach items="${memberList}" var="member">
 			               	<tr>
-			               		<td><a href="" onclick="OpenWindow('detailForm.do?id=${member.id }', '회원상세', 650, 750);">${member.id }</a></td>
+			               		<td><a href="javascript:OpenWindow('detail.do?id=${member.id }', '회원상세보기', 800, 700);" >${member.id }</a></td>
 			               		<td>${member.pwd }</td>
 			               		<td>${member.email }</td>
 			               		<td><a href="tel:010-1234-5678">${member.phone }</a></td>

@@ -1,107 +1,77 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>    
 
-<div class="content-wrapper">
+	<jsp:include page="/WEB-INF/views/content_header.jsp">
+		<jsp:param value="회원상세" name="subject" />
+		<jsp:param value="수정하기" name="item" />
+	</jsp:include>
 
 	<section class="content register-page">
-		<div class="register-box">
-			
-			<!-- 콘텐츠 헤더 -->
-			<div class="login-logo">
-				<a href="<%=request.getContextPath()%>/member/detailForm.do?id=${member.id}"><b>회원 상세</b></a>
-			</div>
+		<div class="register-box" style="min-width: 450px;">
+
 			
 			<!-- 콘텐츠 -->
 			<div class="card">
-				<form role="form" class="form-horizontal" action="regist.do" method="post">
+				<form role="form" class="form-horizontal" method="post">
 					<div class="register-card-body">
-						<input type="hidden" name="picture">
 						<!-- 프로필 사진 선택 부분 -->
-						<div class="input-group mb-3">
-							<div class="mailbox-attachments clearfix" style="text-align: center;">
-								<div class="mailbox-attachment-icon has-img" id="pictureView" style="border: 1px solid green; height: 200px; width: 140px; margin: 0 auto;">
-									<img src="${result }">
-								</div>
-								<div class="mailbox-attachment-info">
-									<div class="input-group input-group-sm">
-										<label for="inputFile" class="btn btn-warning btn-sm btn-flat input-group-addon">파일선택</label>
-										<input id="inputFileName" class="form-control" type="text" disabled>
-										<span class="input-group-append-sm">
-											<button type="button" class="btn btn-info btn-sm btn-append" onclick="upload_go();">업로드</button>
-										</span>
-									</div>
-								</div>
+						<div class="row">
+							<div class="mailbox-attachments clearfix col-md-12" style="text-align: center;">
+								<div id="pictureView" style="border: 1px solid green; height: 180px; width: 140px; margin: 0 auto;"></div>
+							</div>
+						</div>
+						<br>
+						<div class="form-group row">
+							<label for="id" class="col-sm-3 control-label text-right" style="position: relative; top: 6px;">아이디</label>
+							<div class="col-sm-9">
+								<input name="id" type="text" id="id" class="form-control" value="${member.id }" readonly>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="id" class="col-sm-3" style="font-size: 0.9em;">
-								<span style="color: red; font-weight: bold;">*</span>아이디
-							</label>
-							<div class="col-sm-9 input-group input-group-sm">
-								<input name="id" type="text" id="id" class="form-control" placeholder="13자 영문자, 숫자 조합"
-									onkeyup="this.value=this.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, &#39;&#39;)">
-								<span class="input-group-append-sm">
-									<button type="button" class="btn btn-info btn-sm btn-append" onclick="idCheck_go();">중복확인</button>
-								</span>
+							<label for="pwd" class="col-sm-3 control-label text-right" style="position: relative; top: 6px;">패스워드</label>
+							<div class="col-sm-9">
+								<input name="pwd" type="text" id="pwd" class="form-control" value="${member.pwd }" readonly>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="pwd" class="col-sm-3" style="font-size: 0.9em;">
-								<span style="color: red; font-weight: bold;">*</span>패스워드
-							</label>
-							<div class="col-sm-9 input-group-sm">
-								<input name="pwd" type="password" id="pwd" class="form-control" placeholder="20자 영문,숫자,특수문자 조합">
+							<label for="name" class="col-sm-3 control-label text-right" style="position: relative; top: 6px;">이 름</label>
+							<div class="col-sm-9">
+								<input name="name" type="text" id="name" class="form-control" value="${member.name }" readonly>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="name" class="col-sm-3" style="font-size: 0.9em;">
-								<span style="color: red; font-weight: bold;">*</span>이 름
-							</label>
-							<div class="col-sm-9 input-group-sm">
-								<input name="name" type="text" id="name" class="form-control" placeholder="이름을 입력하세요" value="">
+							<label for="email" class="col-sm-3 control-label text-right" style="position: relative; top: 6px;">이메일</label>
+							<div class="col-sm-9">
+								<input name="email" type="text" id="email" class="form-control" value="${member.email }" readonly>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="authority" class="col-sm-3" style="font-size: 0.9em;">&nbsp;&nbsp;권&nbsp;한&nbsp;&nbsp;</label>
-							<div class="col-sm-9 input-group-sm">
-								<select name="authority" class="form-control" style="font-size: 0.9em;">
-									<option value="ROLE_USER">사용자</option>
-									<option value="ROLE_MANAGER">운영자</option>
-									<option value="ROLE_ADMIN">관리자</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="email" class="col-sm-3" style="font-size: 0.9em;">&nbsp;&nbsp;이메일</label>
-							<div class="col-sm-9 input-group-sm">
-								<input name="email" type="text" id="email" class="form-control"	placeholder="example@naver.com" value="">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label for="phone" class="col-sm-3" style="font-size: 0.9em;">&nbsp;&nbsp;전화번호</label>
-							<div class="col-sm-9 input-group-sm">
-								<input name="phone" type="text" id="phone" class="form-control float-left" style="width: 30%;"> 
-								<label class="float-left" style="padding: 0; text-align: center;">&nbsp;-&nbsp;</label>
-								<input name="phone" type="text" class="form-control float-left"	style="width: 30%;"> 
-								<label class="float-left" style="padding: 0; text-align: center;">&nbsp;-&nbsp;</label> 
-								<input name="phone" type="text" class="form-control float-left" style="width: 30%;">
+							<label for="phone" class="col-sm-3 control-label text-right" style="position: relative; top: 6px;">전화번호</label>
+							<div class="col-sm-9">
+								<input name="phone" type="text" id="phone" class="form-control" value="${member.phone }" readonly>
 							</div>
 						</div>
 
 					</div>
 					<div class="card-footer">
 						<div class="row">
+							<c:set var="visible" value="none" />
+							<sec:authorize access="hasRole('ROLE_ADMIN')">
+								<c:set var="visible" value="visible" />
+							</sec:authorize>
 							<div class="col-sm-3">
-								<button type="button" id="modifyBtn" class="btn btn-info" onclick="">수정</button>
+								<button type="button" id="modifyBtn" class="btn btn-info" style="display : ${visible};" onclick="">수 정</button>
 							</div>
 							<div class="col-sm-3">
-								<button type="button" id="cancelBtn" class="btn btn-danger float-right" onclick="CloseWindow();">&nbsp;&nbsp;&nbsp;취&nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
+								<button type="button" id="deleteBtn" class="btn btn-warning" style="display : ${visible};" onclick="">삭 제</button>
 							</div>
 							<div class="col-sm-3">
-								<button type="button" id="cancelBtn" class="btn btn-danger float-right" onclick="CloseWindow();">&nbsp;&nbsp;&nbsp;취&nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
+								<button type="button" id="stopBtn" class="btn btn-danger" style="display : ${visible};" onclick="">${member.enabled eq 1 ? "정 지" : "해 제" }</button>
 							</div>
 							<div class="col-sm-3">
-								<button type="button" id="cancelBtn" class="btn btn-danger float-right" onclick="CloseWindow();">&nbsp;&nbsp;&nbsp;취&nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
+								<button type="button" id="listBtn" class="btn btn-primary" onclick="CloseWindow();">닫 기</button>
 							</div>
 						</div>
 					</div>
@@ -110,6 +80,4 @@
 
 		</div>
 	</section>
-
-</div>
-
+<%@ include file="detail_js.jsp" %>

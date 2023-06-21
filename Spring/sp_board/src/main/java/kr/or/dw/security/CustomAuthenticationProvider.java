@@ -31,7 +31,12 @@ public class CustomAuthenticationProvider implements AuthenticationProvider{
 			throw new AuthenticationServiceException("Internal server error !!");
 		}
 		
+		
 		if (member != null && login_pwd.equals(member.getPwd())) {	// 로그인 성공
+			
+			if (member.getEnabled() == 0) {
+				throw new BadCredentialsException("정지된 계정입니다.");
+			}
 			
 			User authUser = new User(member);
 			

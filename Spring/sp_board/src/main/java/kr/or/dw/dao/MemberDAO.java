@@ -18,5 +18,14 @@ public interface MemberDAO {
 
 	// 회원 등록
 	void insertMember(MemberVO member) throws SQLException;
+
+	// 회원 정보 수정
+	void updateMember(MemberVO member) throws SQLException;
 	
+	//회원 삭제
+	void deleteMember(String id) throws SQLException;
+	
+	// 회원 정지
+	void disabledMember(String id) throws SQLException;
+
 }

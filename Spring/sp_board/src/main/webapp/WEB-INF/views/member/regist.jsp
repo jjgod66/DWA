@@ -3,13 +3,13 @@
 
 <div class="content-wrapper">
 
+		<jsp:include page="/WEB-INF/views/content_header.jsp">
+		<jsp:param value="회원등록" name="subject" />
+		<jsp:param value="수정하기" name="item" />
+	</jsp:include>
+
 	<section class="content register-page">
 		<div class="register-box">
-			
-			<!-- 콘텐츠 헤더 -->
-			<div class="login-logo">
-				<a href="<%=request.getContextPath()%>/member/registForm.do"><b>회원 등록</b></a>
-			</div>
 			
 			<!-- 콘텐츠 -->
 			<div class="card">

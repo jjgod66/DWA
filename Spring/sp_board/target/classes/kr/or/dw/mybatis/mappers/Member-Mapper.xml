@@ -21,4 +21,47 @@
 		INSERT INTO member
 		VALUES (#{id}, #{pwd}, #{email}, #{picture}, 1, SYSDATE, #{phone}, #{name}, 'SYSTEM', NULL, #{authority})
 	</select>
+	
+	<update id="updateMember" parameterType="member">
+		UPDATE member
+		   SET
+		   		pwd 		= #{pwd}
+		   	   ,email 		= #{email}
+		   	   ,phone 		= #{phone}
+		   	   ,name 		= #{name}
+		   	   ,picture 	= #{picture}
+		   	   ,authority 	= #{authority}
+		 WHERE id = #{id}  	   
+	</update>
+	
+<!-- 	<delete id="deleteMember" parameterType="member">
+		DELETE FROM member
+		 WHERE id = #{id}
+	</delete>
+	
+	<update id="stopMember" parameterType="member">
+		UPDATE member
+		<trim prefix="set" suffixOverrides=",">
+        <if test="enabled == 0">enabled = 1,</if>
+        <if test="enabled == 1">enabled = 0,</if>
+    	</trim>
+		 WHERE id = #{id}
+	</update> -->
+	
+	<delete id="deleteMember" parameterType="str">
+		DELETE FROM member
+		WHERE id = #{id}	
+	</delete>
+	
+	<update id="disabledMember" parameterType="str">
+		UPDATE member
+		   SET enabled = 0
+		 WHERE id = #{id}
+	</update>
+	
+	<update id="enabledMember" parameterType="str">
+		UPDATE member
+		   SET enabled = 1
+		 WHERE id = #{id}
+	</update>
 </mapper>
