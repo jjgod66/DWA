@@ -2,9 +2,11 @@ package kr.or.dw.service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import kr.or.dw.command.SearchCriteria;
 import kr.or.dw.vo.MemberVO;
 
 public interface MemberService {
@@ -29,6 +31,12 @@ public interface MemberService {
 
 	// 회원 정지
 	void disabled(String id) throws SQLException;
+
+	// 회원 정지 해제
+	void enabled(String id) throws SQLException;
+
+	// 해당하는 회원목록 조회
+	Map<String, Object> selectSearchMemberList(SearchCriteria cri) throws SQLException;
 
 	
 }

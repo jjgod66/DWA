@@ -25,7 +25,12 @@ window.onload = function(){
 	});
 	// 정지 버튼 클릭
 	$('button#stopBtn').on('click', function(){
-		location.href="stop.do?id=${member.id}";
+		let enabled = ${member.enabled};
+		let urlStr = "stop.do";
+		if (enabled == 0) {
+			urlStr = "activeEnabled.do";
+		};
+		location.href= urlStr + "?id=${member.id}";
 	});
 };
 

@@ -33,4 +33,10 @@ public class MenuServiceImpl implements MenuService{
 		return menuList;
 	}
 
+
+	@Override
+	public MenuVO selectMenuByMcode(String mcode) throws SQLException {
+		return menuDAO.selectMenuByMcode(mcode);
+	}
+
 }

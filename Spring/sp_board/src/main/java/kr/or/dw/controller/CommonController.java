@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.or.dw.service.MemberService;
@@ -82,12 +83,13 @@ public class CommonController {
 	}
 	
 	@RequestMapping("/index")
-	public ModelAndView index(ModelAndView mnv) throws SQLException{
+	public ModelAndView index(@RequestParam(defaultValue="M000000") String mcode, ModelAndView mnv) throws SQLException{
 		String url = "/common/indexPage.page";
 		
 		List<MenuVO> menuList = menuService.selectMainMenuList();
-		
+		MenuVO menu = menuService.selectMenuByMcode(mcode);
 		mnv.addObject("menuList", menuList);
+		mnv.addObject("memu", menu);
 		mnv.setViewName(url);
 		
 		return mnv;
