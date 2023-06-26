@@ -18,12 +18,39 @@
 					// 파일 서버로 보내기
 					for (let i = files.length -1; i >= 0; i--) {
 						sendFile(files[i], this);
+					};
+				},
+				onMediaDelete : function(target){
+					if(confirm("삭제하시겠습니까?")){
+						deleteFile(target[0].src);
 					}
 				}
 			}
 			
 		});
 	};
+	
+	function deleteFile(src) {
+		let splitSrc = src.split("=");
+		let fileName = splitSrc[splitSrc.length - 1];
+		
+		let fileData = {
+				fileName : fileName
+		}
+		
+		console.log(fileData);
+		console.log(JSON.stringify(fileData));
+		
+		$.ajax({
+			url : "<%=request.getContextPath()%>/deleteImg.do",
+			type : "post",
+			data : JSON.stringify(fileData),
+			contentType : "application/json",
+			success : function(res){
+				console.log(res);
+			}
+		});
+	} 
 	
 	function sendFile(file, el) {
 		let form_data = new FormData();
@@ -35,7 +62,7 @@
 			contentType : false,
 			processData : false,
 			success : function(img_url){
-				alert(img_url);
+				$(el).summernote('editor.insertImage', img_url);
 			},
 			error : function(){
 				

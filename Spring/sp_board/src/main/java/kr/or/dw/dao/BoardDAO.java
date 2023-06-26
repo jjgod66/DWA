@@ -16,6 +16,22 @@ public interface BoardDAO {
 	List<BoardVO> selectSearchBoardList(SearchCriteria cri, RowBounds rowBounds) throws SQLException;
 
 	// 해당하는 게시글 수 조회
-	int selectSearchBoardListCount(SearchCriteria cri);
+	int selectSearchBoardListCount(SearchCriteria cri) throws SQLException;
+
+	// 글 등록
+	void insertBoard(BoardVO board) throws SQLException;
+
+	// 해당 글 조회
+	BoardVO selectBoard(int bno) throws SQLException;;
+
+	// 해당 글 조회수 올리기
+	void increaseViewCnt(int bno) throws SQLException;
+
+	// 해당 글 수정
+	void updateBoard(BoardVO board) throws SQLException;
+
+	// 해당 글 삭제
+	void deleteBoard(int bno) throws SQLException;
+
 	
 }
