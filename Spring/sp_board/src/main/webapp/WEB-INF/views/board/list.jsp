@@ -56,7 +56,7 @@
 							<td><a href="javascript:OpenWindow('detail.do?bno=${board.bno }', '상세보기', 800, 700)">${board.title }</a></td>
 							<td>${board.writer }</td>
 							<td><fmt:formatDate value='${board.regdate}' pattern='yyyy-MM-dd'/></td>
-							<td>${board.viewcnt }</td>
+							<td><span class="badge bg-red">${board.viewcnt }</span></td>
 						</tr>
 					</c:forEach>
 				</table>

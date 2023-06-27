@@ -17,6 +17,7 @@
 					<div class="card-header">
 						<h3 class="card-title">상세보기</h3>
 					</div>
+					<!-- card body Start -->
 					<div class="card-body">
 						<div class="form-group col-sm-12">
 							<label for="title">제 목</label>
@@ -41,10 +42,43 @@
 							<div id="content">${board.content }</div>
 						</div>
 					</div>
+					<!-- card body End -->
 					<div class="card-footer">
 						<button type="button" id="modifyBtn" class="btn btn-warning">MODIFY</button>
 						<button type="button" id="removeBtn" class="btn btn-danger">REMOVE</button>
 						<button type="button" id="listBtn" class="btn btn-primary">CLOSE</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- reply component Start -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card card-info">
+					<!-- card body Start -->
+					<div class="card-body">
+						<!-- timeline Start -->
+						<div class="timeline"> 	
+							<div class="time-label" id="repliesDiv">
+								<span class="bg-green">Replies List</span>
+							</div>
+						</div>
+						<!-- timeline End -->			
+						<div class="text-center">
+							<ul id="pagination" class="pagination justify-content-center m-0">
+							
+							</ul>
+						</div>
+					</div>
+					<!-- card body End -->
+					<div class="card-footer">
+						<label for="newReplyWriter">Writer</label>
+						<input class="form-control" type="hidden" id="newReplyWriter" readonly value="${loginUser.id }">
+						<label for="newReplyText">Reply Text</label>
+						<input class="form-control" type="text" placeholder="REPLY TEXT" id="newReplyText">
+						<br>
+						<button type="button" class="btn btn-primary" id="replyAddBtn">ADD REPLY</button>
 					</div>
 				</div>
 			</div>
@@ -83,5 +117,8 @@ window.onload = function(){
 		window.opener.location.reload(true);
 		window.close();
 	});
+	ShowReply();
 }
 </script>
+
+<%@ include file="reply_js.jsp" %>
