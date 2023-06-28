@@ -65,7 +65,6 @@ function ShowReply(){
 				alert("댓글이 등록되었습니다.");
 				getPage("<%=request.getContextPath()%>/replies/${board.bno}/" + data);
 				$('#newReplyText').val("");
-				console.log(data);
 			},
 			error : function(err){
 				alert("댓글 등록을 실패했습니다. 관리자에게 문의하세요.");
@@ -73,6 +72,61 @@ function ShowReply(){
 			}
 		});
 	});
+	
+	$('div.timeline').on('click', '#modifyReplyBtn', function(){
+		let rno = $(this).attr("data-rno");
+		let replyer = $(this).attr("data-replyer");
+		let replytext = $('#' + rno + '-replytext').text();
+		
+		$('#replytext').val(replytext);
+		$('.modal-title').text(rno);
+	});
+	
+	$('#replyModBtn').on('click', function(){
+		let rno = $('.modal-title').text();
+		let replytext = $('#replytext').val();
+		
+		$.ajax({
+			url : "<%=request.getContextPath()%>/replies/" + rno,
+			type : "PUT",
+			data : JSON.stringify({replytext : replytext, rno : rno}),
+			contentType : "application/json",
+			success : function(){
+				alert("수정되었습니다.");
+				let curPage = $('#pagination').find('li.active').find('a').text();
+				getPage("<%=request.getContextPath()%>/replies/${board.bno}/" + curPage);
+			},
+			error : function(){
+				alert("수정을 실패했습니다.");
+			},
+			complete : function(){
+				$('#modifyModal').modal('hide');
+			}
+		});
+	});
+	
+	$('#replyDelBtn').on('click', function(){
+		let bno = ${board.bno};
+		let rno = $('.modal-title').text();
+		let curPage = $('#pagination').find('li.active').find('a').text();
+		
+		$.ajax({
+			url : "<%=request.getContextPath()%>/replies/${board.bno}/" + rno + "/" + curPage,
+			type : "DELETE",
+			dataType : "text",
+			success : function(page){
+				alert("삭제되었습니다.");
+				getPage("<%=request.getContextPath()%>/replies/${board.bno}/" + page);
+			},
+			error : function(){
+				alert("삭제를 실패했습니다.");
+			},
+			complete : function(){
+				$('#modifyModal').modal('hide');
+			}
+		});
+	});
+	
 };
 
 Handlebars.registerHelper({
@@ -121,7 +175,6 @@ function printPaging(pageMaker, target) {
 	if (pageMaker.prev) {
 		str += "<li class='page-item'><a class='page-link' href='" + (pageMaker.cri.page-1)
 				+ "'> <i class='fas fa-angle-left'></i> </a></li>";
-				console.log("test!!");
 	};
 	
 	for (let i = pageMaker.startPage; i <= pageMaker.endPage; i++) {

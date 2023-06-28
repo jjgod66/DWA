@@ -13,4 +13,10 @@ public interface ReplyService {
 
 	// 댓글리스트 불러오기
 	Map<String, Object> selectReplyList(int bno, SearchCriteria cri) throws SQLException;
+
+	// 댓글 수정
+	void modifyReply(ReplyVO reply) throws SQLException;
+
+	// 댓글 삭제
+	void removeReply(int rno) throws SQLException;
 }

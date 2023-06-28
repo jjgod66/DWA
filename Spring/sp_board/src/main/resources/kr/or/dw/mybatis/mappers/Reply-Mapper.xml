@@ -19,4 +19,16 @@
 		  FROM reply
 		 WHERE bno = #{bno}
 	</select>
+	
+	<update id="updateReply">
+		UPDATE reply 
+		   SET replytext = #{replytext}
+			  ,updatedate = SYSDATE
+		 WHERE rno = #{rno}
+	</update>
+	
+	<delete id="deleteReply">
+		DELETE FROM reply
+		 WHERE rno = #{rno}
+	</delete>
 </mapper>

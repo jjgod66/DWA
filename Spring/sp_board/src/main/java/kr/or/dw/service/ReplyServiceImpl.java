@@ -43,4 +43,15 @@ public class ReplyServiceImpl implements ReplyService {
 		return dataMap;
 	}
 
+	@Override
+	public void modifyReply(ReplyVO reply) throws SQLException {
+		replyDAO.updateReply(reply);
+	}
+
+	@Override
+	public void removeReply(int rno) throws SQLException {
+		replyDAO.deleteReply(rno);
+		
+	}
+
 }

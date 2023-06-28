@@ -7,14 +7,14 @@
 
 <div class="content-wrapper">
 	<jsp:include page="../content_header.jsp">
-		<jsp:param value="게시판리스트" name="subject"/>
+		<jsp:param value="자료실리스트" name="subject"/>
 		<jsp:param value="목록" name="item"/>
 	</jsp:include>
 	
 	<section>
 		<div class="card">
 			<div class="card-header with-border">
-				<button type="button" class="btn btn-primary" id="" onclick="OpenWindow('registForm.do', '글등록', 800, 700)">글등록</button>
+				<button type="button" class="btn btn-primary" id="" onclick="OpenWindow('registForm.do', '글등록', 800, 700)">자료등록</button>
 				<div class="card-tools" style="width: 350px;">
 					<div class="input-group row">
 						<select class="form-control col-md-4" name="searchType" id="searchType">
@@ -40,10 +40,11 @@
 						<th>번 호</th>
 						<th style="width: 50%;">제 목</th>
 						<th>작성자</th>
+						<th>첨부파일</th>
 						<th>등록일</th>
 						<th>조회수</th>
 					</tr>
-					<c:if test="${empty boardList }">
+					<%-- <c:if test="${empty boardList }">
 						<tr>
 							<td colspan="5">
 								<strong>해당 내용이 없습니다.</strong>
@@ -59,7 +60,7 @@
 										<c:if test="${board.replycnt ne 0}">
 											<span class="nav-item">&nbsp;&nbsp;
 												<i class="fa fa-comment" style="color:blue;">&nbsp;${board.replycnt}</i>
-<%-- 												<span class="badge badge-warning navbar-badge">${board.replycnt}</span> --%>
+												<span class="badge badge-warning navbar-badge">${board.replycnt}</span>
 											</span>
 										</c:if>
 									</span>
@@ -69,11 +70,15 @@
 							<td><fmt:formatDate value='${board.regdate}' pattern='yyyy-MM-dd'/></td>
 							<td><span class="badge bg-red">${board.viewcnt }</span></td>
 						</tr>
-					</c:forEach>
+					</c:forEach> --%>
 				</table>
 			</div>
 			<div class="card-footer">
-				<%@ include file="../common/pagination.jsp" %>
+				<nav aria-label="pds list Navigation">
+					<ul class="pagination justify-content-center m-0">
+<%-- 				<%@ include file="../common/pagination.jsp" %> --%>
+					</ul>
+				</nav>
 			</div>
 		</div>
 	</section>

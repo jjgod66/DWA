@@ -17,7 +17,13 @@ public interface ReplyDAO {
 	// 댓글리스트 불러오기
 	List<ReplyVO> selectPageReplyList(int bno, RowBounds rowBounds) throws SQLException;
 
-	// 해당 댓글 수 블로오기
+	// 해당 댓글 수 불러오기
 	int countReply(int bno);
+	
+	// 댓글 수정
+	void updateReply(ReplyVO reply);
+
+	// 댓글 삭제
+	void deleteReply(int rno);
 
 }

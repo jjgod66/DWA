@@ -70,4 +70,43 @@ public class ReplyController {
 		return entity;
 	}
 	
+	@RequestMapping(value="/{rno}", method= {RequestMethod.PUT, RequestMethod.PATCH})
+	public ResponseEntity<String> modify(@RequestBody ReplyVO reply) throws SQLException {
+		ResponseEntity<String> entity = null;
+		
+		try {
+			replyService.modifyReply(reply);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/{bno}/{rno}/{page}", method=RequestMethod.DELETE)
+	public ResponseEntity<String> remove(@PathVariable("rno") int rno, 
+										 @PathVariable("bno") int bno, 
+										 @PathVariable("page") int page) throws SQLException {
+		ResponseEntity<String> entity = null;
+		
+		try {
+			replyService.removeReply(rno);
+			
+			SearchCriteria cri = new SearchCriteria();
+			Map<String, Object> dataMap = replyService.selectReplyList(bno, cri);
+			PageMaker pageMaker = (PageMaker) dataMap.get("pageMaker");
+			
+			int realEndPage = pageMaker.getRealEndPage();
+			if (page > realEndPage) page = realEndPage;
+			
+			entity = new ResponseEntity<String>("" + page, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return entity;
+	}
 }
